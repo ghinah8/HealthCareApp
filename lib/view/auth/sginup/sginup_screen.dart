@@ -111,7 +111,7 @@ class SignupScreen extends StatelessWidget {
                           Get.toNamed(Routes.homescreen);
                         }
                       },
-                      textbutton: 'Sign In',
+                      textbutton: 'Sign Up',
                       colorbutton: Mycolor.lightblue,
                       width: SizeConfig.widthPercentage(90),
                       hieght: SizeConfig.heightPercentage(7),

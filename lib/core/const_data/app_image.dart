@@ -1,4 +1,5 @@
 class AppImage {
+  //image
   static const String imagesRoot = "assets/image";
 
   static String doctor1 = "$imagesRoot/doctor.png";
@@ -6,16 +7,20 @@ class AppImage {
   static String artical1 = "$imagesRoot/Rectangle 460.png";
   static String artical2 = "$imagesRoot/Rectangle 954.png";
   static String artical4 = "$imagesRoot/pexels-cedric-fauntleroy-4270371.png";
-
   static String profilepicture = "$imagesRoot/Ellipse 78.png";
   static String maledoctor = "$imagesRoot/doctor11.png";
-
   static String femaledoctor =
       "$imagesRoot/beautiful-young-female-doctor-looking-camera-office-removebg-preview 1@3x.png";
-
   static String splash = "$imagesRoot/Spalsh screen.png";
-
   static String femaledoctor2 = "$imagesRoot/female-doctor.png";
+  static String prescription = "$imagesRoot/contractrqe 1.png";
+  static String medicine1 =
+      '$imagesRoot/healthvit_l_lysine_500_mg_tablet_60_s_0.png';
+  static String medicine2 = '$imagesRoot/ef58faa9a71e47e02e217bca7aa11595.png';
+  static String medicine3 = '$imagesRoot/lablab.png';
+  static String medicine4 = '$imagesRoot/pharmacyy.png';
+
+  //icon
 
   static const String iconRoot = "assets/icon";
 
@@ -33,4 +38,5 @@ class AppImage {
   static String exit = "$iconRoot/2676937_exit_leave_logout_signout_icon 1.png";
   static String document = "$iconRoot/Document.png";
   static String report = "$iconRoot/Frame 5.png";
+  static String rays = "$iconRoot/raysicon.png";
 }

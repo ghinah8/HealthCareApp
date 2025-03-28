@@ -84,26 +84,35 @@ class HomeScreen extends StatelessWidget {
               height: 15,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
                   Categories(
-                      categoryname: 'Doctor',
+                      categoryname: 'Doctors',
                       icon: AppImage.topdoctor,
                       onpressed: () {}),
                   SizedBox(
-                    width: 28,
+                    width: 18,
                   ),
                   Categories(
                       categoryname: 'Pharmacy',
                       icon: AppImage.pharmacy,
-                      onpressed: () {}),
+                      onpressed: () {
+                        Get.toNamed(Routes.pharmacyScreen);
+                      }),
                   SizedBox(
-                    width: 28,
+                    width: 18,
                   ),
                   Categories(
                       categoryname: 'Ambulance',
                       icon: AppImage.ambulance,
+                      onpressed: () {}),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  Categories(
+                      categoryname: 'Rays',
+                      icon: AppImage.rays,
                       onpressed: () {})
                 ],
               ),

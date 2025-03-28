@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Routes.pages,
-      initialRoute: Routes.animatedsplash,
+      initialRoute: Routes.pharmacyScreen,
     );
   }
 }

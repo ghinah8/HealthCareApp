@@ -179,10 +179,26 @@ class FontStyles {
     fontWeight: FontWeight.w500,
     fontSize: SizeConfig.blockWidth * 3.3, // 16الحجم النسبي
   );
-
+//pharmacy screen
   static final pharmacy = GoogleFonts.poppins(
     color: Mycolor.grey,
     fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // 16الحجم النسبي
+  );
+  static final pharmacyupload = GoogleFonts.poppins(
+    color: Mycolor.white,
+    fontWeight: FontWeight.w500,
     fontSize: SizeConfig.blockWidth * 4, // 16الحجم النسبي
+  );
+
+  static final popularproduct = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 5, // 16الحجم النسبي
+  );
+  static final medicinename = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 3.8, // 16الحجم النسبي
   );
 }
