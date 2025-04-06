@@ -25,7 +25,7 @@ HealthCareApp is a mobile application designed to enhance the healthcare experie
 - Database: Mongodb
 
 - Design: [Figma](https://www.figma.com/design/8oDGRthSg80KLJuDcQsgSm/Grad?node-id=467-1042&t=NolwRWIBTDSSJl6Q-0)
-- Desgin by:[Lobna Sryo](https://www.linkedin.com/in/lobna-sryo-3547372b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bi0XZT21kTiOIkvsl0mColQ%3D%3D)
+- Desgined by:[Lobna Sryo](https://www.linkedin.com/in/lobna-sryo-3547372b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bi0XZT21kTiOIkvsl0mColQ%3D%3D)
 
 🚀 Getting Started
 📸 Screenshots
