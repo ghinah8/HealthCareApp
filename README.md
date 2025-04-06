@@ -1,4 +1,4 @@
-# healthcare
+# HealthCareApp
 
 📌 Overview
 
@@ -6,43 +6,44 @@ HealthCareApp is a mobile application designed to enhance the healthcare experie
 
 ✨ Features
 
-📅 Appointment Scheduling – Easily book and manage medical appointments.
+- 📅 Appointment Scheduling – Easily book and manage medical appointments.
 
-🏥 Medical History Tracking – Store and access patient health records.
+- 🏥 Medical History Tracking – Store and access patient health records.
 
-🔔 Health Notifications – Receive timely reminders for medications and check-ups.
+- 🔔 Health Notifications – Receive timely reminders for medications and check-ups.
 
-🗣 Doctor-Patient Communication – Secure messaging for consultations.
+- 🗣 Doctor-Patient Communication – Secure messaging for consultations.
 
-🌐 User-Friendly Interface – Designed with an intuitive and engaging UI.
+- 🌐 User-Friendly Interface – Designed with an intuitive and engaging UI.
 
 🛠 Tech Stack
 
-Frontend: Flutter / React Native
+- Frontend: Flutter / Dart
 
-Backend: Node.js / Firebase
+- Backend: Node.js 
 
-Database: Firestore / PostgreSQL
+- Database: Mongodb
 
-Design: Figma Prototype
+- Design: [Figma](https://www.figma.com/design/8oDGRthSg80KLJuDcQsgSm/Grad?node-id=467-1042&t=NolwRWIBTDSSJl6Q-0)
+- Desgin by:[Lobna Sryo](https://www.linkedin.com/in/lobna-sryo-3547372b6?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bi0XZT21kTiOIkvsl0mColQ%3D%3D)
 
 🚀 Getting Started
 📸 Screenshots
 
-(Include app screenshots here)
+(I will add it when the app is finished)
 
 💡 Future Enhancements
 
-AI-based health recommendations
+- AI-based health recommendations
 
-Telemedicine video consultations
+- Telemedicine video consultations
 
-Multi-language support
+- Multi-language support
 
 📩 Contact
 
 Developed by Ghina Habib – Feel free to connect!
 
-📧 Email: ghinahabib55@gmail.com
+- 📧 Email: ghinahabib55@gmail.com
 
-🔗 [LinkdIn](https://www.linkedin.com/in/ghina-habib-3645a4271/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
+- 🔗 [LinkdIn](https://www.linkedin.com/in/ghina-habib-3645a4271/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
