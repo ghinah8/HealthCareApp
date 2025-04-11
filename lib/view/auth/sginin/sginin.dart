@@ -96,7 +96,10 @@ class LoginScreen extends StatelessWidget {
                     ButtonCustom(
                       onpressed: () {
                         if (_formKey.currentState!.validate()) {
-                          Get.toNamed(Routes.homescreen);
+                          String email = emailController.text;
+                          String password = passwordController.text;
+                          AuthController authController = Get.find();
+                          authController.signIn(email, password);
                         }
                       },
                       textbutton: 'Sign In',

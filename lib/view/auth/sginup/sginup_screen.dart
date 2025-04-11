@@ -5,6 +5,7 @@ import 'package:healthcare/core/const_data/app_image.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
 import 'package:healthcare/routes.dart';
+import 'package:healthcare/service/my_sevice.dart';
 import 'package:healthcare/view/auth/auth_controller/auth_controller.dart';
 import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/general_widget/button_custom.dart';
@@ -15,6 +16,7 @@ class SignupScreen extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class SignupScreen extends StatelessWidget {
                 key: _formKey,
                 child: Column(
                   children: [
-                    SizedBox(height: SizeConfig.heightPercentage(4)),
+                    SizedBox(height: SizeConfig.heightPercentage(3)),
                     TextfieldCustom(
                       hinttext: 'Enter your name',
                       scuretext: false,
@@ -73,6 +75,19 @@ class SignupScreen extends StatelessWidget {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Email cannot be empty';
+                        }
+                        return null;
+                      },
+                    ),
+                    SizedBox(height: SizeConfig.heightPercentage(3)),
+                    TextfieldCustom(
+                      hinttext: 'Enter your Phone Number',
+                      scuretext: false,
+                      iconData: Icons.phone_outlined,
+                      controller: phoneController,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Phone Number can not be empty';
                         }
                         return null;
                       },
@@ -104,12 +119,23 @@ class SignupScreen extends StatelessWidget {
                       ),
                       scuretext: controller.recovery,
                     ),
-                    SizedBox(height: SizeConfig.heightPercentage(8)),
+                    SizedBox(height: SizeConfig.heightPercentage(2.5)),
                     ButtonCustom(
-                      onpressed: () {
+                      onpressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          Get.toNamed(Routes.homescreen);
+                          String name = nameController.text;
+                          String email = emailController.text;
+                          String password = passwordController.text;
+                          String phonenumber = phoneController.text;
+
+                          // Call the signUp method in AuthController
+                          AuthController authController = Get.find();
+                          authController.signUp(
+                              name, email, password, phonenumber);
                         }
+                        final userService = Get.find<UserService>();
+                        await userService.saveUsername(nameController.text,
+                            saveToPreferences: true);
                       },
                       textbutton: 'Sign Up',
                       colorbutton: Mycolor.lightblue,
@@ -135,7 +161,7 @@ class SignupScreen extends StatelessWidget {
                             ))
                       ],
                     ),
-                    SizedBox(height: SizeConfig.heightPercentage(6)),
+                    SizedBox(height: SizeConfig.heightPercentage(2)),
                     Row(
                       children: [
                         Text(

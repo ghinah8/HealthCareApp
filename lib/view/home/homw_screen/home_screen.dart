@@ -19,7 +19,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    Get.put(HomeController());
+    final homeController = Get.put(HomeController());
+
     return Scaffold(
       backgroundColor: Mycolor.white,
       bottomNavigationBar: BottomNavBar(
@@ -60,7 +61,10 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       SizedBox(height: 20),
                       Text("welcome !", style: FontStyles.welcome),
-                      Text("Ghina", style: FontStyles.rucita),
+                      Obx(() => Text(
+                            homeController.username.value,
+                            style: FontStyles.rucita,
+                          )),
                       SizedBox(height: 5),
                       Text(
                         "How is it going today ?",

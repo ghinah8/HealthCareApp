@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healthcare/routes.dart';
+import 'package:healthcare/service/my_sevice.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+  await Get.putAsync(() => UserService().init());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Routes.pages,
-      initialRoute: Routes.pharmacyScreen,
+      initialRoute: Routes.signupscreen,
     );
   }
 }

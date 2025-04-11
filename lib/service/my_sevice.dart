@@ -1,46 +1,48 @@
-// import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:get/get.dart';
 
-// class MyService extends GetxService {
-//   late SharedPreferences sharedPreferences;
-//   String? _token; // تخزين التوكن في الذاكرة
+class UserService extends GetxService {
+  late SharedPreferences sharedPreferences;
+  String? _username; // تخزين الاسم في الذاكرة
 
-//   Future<MyService> init() async {
-//     sharedPreferences = await SharedPreferences.getInstance();
-//     _token = sharedPreferences.getString('token'); // استرجاع التوكن
-//     return this;
-//   }
+  Future<UserService> init() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    _username = sharedPreferences.getString('username'); // استرجاع الاسم
+    return this;
+  }
 
-//   // حفظ التوكن في الذاكرة أو SharedPreferences
-//   Future<void> saveToken(String token, {bool saveToPreferences = false}) async {
-//     _token = token; // تخزين التوكن في الذاكرة
-//     if (saveToPreferences) {
-//       await sharedPreferences.setString('token', token);
-//     }
-//     print('Token saved: $token');
-//   }
+  // حفظ الاسم في الذاكرة أو SharedPreferences
+  Future<void> saveUsername(String username,
+      {bool saveToPreferences = false}) async {
+    _username = username; // تخزين الاسم في الذاكرة
+    if (saveToPreferences) {
+      await sharedPreferences.setString('username', username);
+    }
+    print('Username saved: $username');
+  }
 
-//   // استرجاع التوكن
-//   Future<String?> getAccessToken({bool fromPreferences = false}) async {
-//     if (fromPreferences) {
-//       return sharedPreferences.getString('token'); // من التخزين
-//     }
-//     return _token; // من الذاكرة
-//   }
+  // استرجاع الاسم
+  Future<String?> getUsername({bool fromPreferences = false}) async {
+    if (fromPreferences) {
+      return sharedPreferences.getString('username'); // من التخزين
+    }
+    return _username; // من الذاكرة
+  }
 
-//   // التحقق من حالة تسجيل الدخول
-//   Future<bool> isUserLoggedIn() async {
-//     return _token != null || sharedPreferences.getString('token') != null;
-//   }
+  // التحقق من وجود اسم مستخدم مخزن
+  Future<bool> isUserRegistered() async {
+    return _username != null || sharedPreferences.getString('username') != null;
+  }
 
-//   // حذف التوكن
-//   Future<void> clearToken() async {
-//     _token = null; // حذف من الذاكرة
-//     await sharedPreferences.remove('token'); // حذف من التخزين
-//     print('Token cleared');
-//   }
-// }
+  // حذف الاسم المخزن
+  Future<void> clearUsername() async {
+    _username = null; // حذف من الذاكرة
+    await sharedPreferences.remove('username'); // حذف من التخزين
+    print('Username cleared');
+  }
+}
 
-// initialServices() async {
-//   await Get.putAsync(() => MyService().init());
-// }
+// استدعاء الخدمة عند بدء التطبيق
+Future<void> initialServices() async {
+  await Get.putAsync(() => UserService().init());
+}
