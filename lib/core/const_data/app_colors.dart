@@ -20,4 +20,5 @@ class Mycolor {
   static const darkgrey = Color(0xff333333);
   static const skipcolor = Color(0xffA1A8B0);
   static const redcolor = Color.fromARGB(255, 255, 0, 0);
+  static const themecolor = Color(0xFFB3E5FC);
 }

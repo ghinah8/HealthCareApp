@@ -122,10 +122,12 @@ class ProfileScreen extends StatelessWidget {
                     height: 30,
                   ),
                   Profiledetails(
-                      iconimage: AppImage.report,
-                      text: 'Report',
-                      goto: () {},
-                      padding: 170),
+                      iconimage: AppImage.heartprofile,
+                      text: 'My Saved',
+                      goto: () {
+                        Get.toNamed(Routes.mysaved);
+                      },
+                      padding: 146),
                   SizedBox(
                     height: 15,
                     child: Divider(

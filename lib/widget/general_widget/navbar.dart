@@ -77,13 +77,13 @@ class BottomNavBar extends StatelessWidget {
                   children: [
                     if (isSelectedReports)
                       Icon(
-                        Icons.bookmark,
+                        Icons.monitor_heart,
                         size: SizeConfig.widthPercentage(9),
                         color: Mycolor.lightblue,
                       )
                     else
                       Icon(
-                        Icons.bookmark_outline,
+                        Icons.monitor_heart_outlined,
                         size: SizeConfig.widthPercentage(8),
                         color: Mycolor.lightgrey,
                       )

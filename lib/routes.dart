@@ -3,6 +3,7 @@ import 'package:healthcare/view/auth/sginin/sginin.dart';
 import 'package:healthcare/view/auth/sginup/sginup_screen.dart';
 import 'package:healthcare/view/home/homw_screen/home_screen.dart';
 import 'package:healthcare/view/mysaved/mysaved_screen/mysaved_screen.dart';
+import 'package:healthcare/view/patientdetail/patientdetail_Screen/patient_details_screen.dart';
 import 'package:healthcare/view/pharmacy/pharmcy_screen/pharmacy_screen.dart';
 import 'package:healthcare/view/profile/profile_screen/profile_screen.dart';
 import 'package:healthcare/view/splash_screen/secondscreen.dart';
@@ -19,6 +20,7 @@ class Routes {
   static const String thirdsplashscreen = '/thirdsplash';
   static const String mysaved = '/mysaved';
   static const String pharmacyScreen = '/pharmacy';
+  static const String patientdetailScreen = '/patientdetailScreen';
 
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
@@ -30,5 +32,6 @@ class Routes {
     GetPage(name: '/thirdsplash', page: () => thirdscreen()),
     GetPage(name: '/mysaved', page: () => MysavedScreen()),
     GetPage(name: '/pharmacy', page: () => PharmacyScreen()),
+    GetPage(name: '/patientdetailScreen', page: () => PatientDetailsScreen())
   ];
 }

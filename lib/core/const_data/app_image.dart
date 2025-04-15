@@ -37,6 +37,6 @@ class AppImage {
   static String chat = "$iconRoot/Chat.png";
   static String exit = "$iconRoot/2676937_exit_leave_logout_signout_icon 1.png";
   static String document = "$iconRoot/Document.png";
-  static String report = "$iconRoot/Frame 5.png";
+  static String heartprofile = "$iconRoot/Heart.png";
   static String rays = "$iconRoot/raysicon.png";
 }

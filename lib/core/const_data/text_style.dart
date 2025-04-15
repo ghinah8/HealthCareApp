@@ -201,4 +201,10 @@ class FontStyles {
     fontWeight: FontWeight.w500,
     fontSize: SizeConfig.blockWidth * 3.8, // 16الحجم النسبي
   );
+  //patient detailes
+  static final year = GoogleFonts.poppins(
+    color: Mycolor.grey.withAlpha(20),
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 4, // 16الحجم النسبي
+  );
 }
