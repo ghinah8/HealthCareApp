@@ -36,8 +36,9 @@ class AgeDropdownField extends StatelessWidget {
             child: DropdownButtonFormField<String>(
               decoration: InputDecoration(
                 labelText: label,
+                labelStyle: FontStyles.lablepatientname,
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Mycolor.navyblue)),
+                    borderSide: BorderSide(color: Mycolor.lightblue)),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide(color: Mycolor.lightgrey),

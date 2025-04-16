@@ -207,4 +207,29 @@ class FontStyles {
     fontWeight: FontWeight.w500,
     fontSize: SizeConfig.blockWidth * 4, // 16الحجم النسبي
   );
+  static final healthcaretitle = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 7, // 16الحجم النسبي
+  );
+  static final longtitle = GoogleFonts.nunito(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w700,
+    fontSize: SizeConfig.blockWidth * 5, // 16الحجم النسبي
+  );
+  static final questionhealthcare = GoogleFonts.nunito(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // 16الحجم النسبي
+  );
+  static final yesnoanswer = GoogleFonts.nunito(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 3.5, // 16الحجم النسبي
+  );
+  static final lablepatientname = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
 }

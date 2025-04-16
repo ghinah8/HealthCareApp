@@ -15,13 +15,25 @@ class PharmacyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Mycolor.lightblue,
+        onPressed: () {},
+        child: Icon(
+          Icons.shopping_cart_outlined,
+          color: Mycolor.white,
+          size: 40,
+        ),
+      ),
       backgroundColor: Mycolor.white,
       appBar: AppBar(
         backgroundColor: Mycolor.white,
         title: Center(
-          child: Text(
-            'Pharmacy',
-            style: FontStyles.pharmacy,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 35.0),
+            child: Text(
+              'Pharmacy',
+              style: FontStyles.pharmacy,
+            ),
           ),
         ),
         leading: Backbutton(),

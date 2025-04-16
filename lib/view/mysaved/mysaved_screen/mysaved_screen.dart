@@ -3,9 +3,7 @@ import 'package:get/get.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
-import 'package:healthcare/routes.dart';
 import 'package:healthcare/view/home/home_controller/home_controller.dart';
-import 'package:healthcare/widget/general_widget/navbar.dart';
 import 'package:healthcare/widget/helpful_widget/article.dart';
 
 class MysavedScreen extends StatelessWidget {
@@ -18,21 +16,6 @@ class MysavedScreen extends StatelessWidget {
     final HomeController homeController = Get.find<HomeController>();
     return Scaffold(
       backgroundColor: Mycolor.white,
-      bottomNavigationBar: BottomNavBar(
-        isSelectedHome: false,
-        isSelectedNotifications: false,
-        isSelectedProfile: false,
-        isSelectedReports: true,
-        onPressedHome: () {
-          Get.toNamed(Routes.homescreen);
-        },
-        onPressedProfile: () {
-          Get.toNamed(Routes.profilescreen);
-        },
-        onPressedReports: () {
-          Get.toNamed(Routes.mysaved);
-        },
-      ),
       appBar: AppBar(
         backgroundColor: Mycolor.white,
         title: Center(
@@ -41,7 +24,7 @@ class MysavedScreen extends StatelessWidget {
             style: FontStyles.welcome,
           ),
         ),
-        leading: null,
+        leading: BackButton(),
         toolbarHeight: 80,
       ),
       body: Obx(() {

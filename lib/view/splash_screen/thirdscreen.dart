@@ -70,7 +70,7 @@ class thirdscreen extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 50, right: 30),
                       child: FloatingActionButton(
                         onPressed: () {
-                          Get.toNamed(Routes.signupscreen);
+                          Get.toNamed(Routes.letstarted);
                         },
                         backgroundColor: Colors.blue,
                         shape: const CircleBorder(),
