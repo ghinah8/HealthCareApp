@@ -232,4 +232,34 @@ class FontStyles {
     fontWeight: FontWeight.w400,
     fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
   );
+  static final medicinename2 = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final medicinumber = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final price = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 6, // الحجم النسبي
+  );
+  static final description = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final descriptiondetails = GoogleFonts.poppins(
+    color: Mycolor.lightgrey,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final buy = GoogleFonts.poppins(
+    color: Mycolor.white,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
 }

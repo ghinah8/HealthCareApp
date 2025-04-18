@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
+import 'package:healthcare/routes.dart';
 
 class Medicine extends StatelessWidget {
   const Medicine(
@@ -26,11 +28,16 @@ class Medicine extends StatelessWidget {
             SizedBox(
               height: 3,
             ),
-            Image.asset(
-              medicineimage,
+            IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.medicinedetailsScreen);
+              },
+              icon: Image.asset(
+                medicineimage,
+              ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Align(
               alignment: Alignment.centerLeft,
@@ -39,30 +46,29 @@ class Medicine extends StatelessWidget {
                 style: FontStyles.medicinename,
               ),
             ),
-            SizedBox(
-              height: 5,
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   '\$$medicineprice',
                   style: FontStyles.medicinename,
                 ),
-                Container(
-                  width: 24,
-                  height: 32,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Mycolor.lightblue),
-                  child: IconButton(
-                      padding: EdgeInsets.only(right: 15, bottom: 3, left: 0),
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.add,
-                        color: Mycolor.white,
-                        size: 28,
-                      )),
+                Padding(
+                  padding: const EdgeInsets.only(left: 80.0),
+                  child: Container(
+                    width: 24,
+                    height: 32,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Mycolor.lightblue),
+                    child: IconButton(
+                        padding: EdgeInsets.only(right: 15, bottom: 3, left: 0),
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.add,
+                          color: Mycolor.white,
+                          size: 28,
+                        )),
+                  ),
                 )
               ],
             )
