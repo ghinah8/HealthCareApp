@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Routes.pages,
-      initialRoute: Routes.pharmacyScreen,
+      initialRoute: Routes.cardinfoscreen,
     );
   }
 }

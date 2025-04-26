@@ -2,8 +2,14 @@ import 'package:get/get.dart';
 
 class MedicinedetailsController extends GetxController {
   int number = 1;
-  double price = 99.9;
-  double sum = 99.9;
+  late double price;
+  late double sum;
+
+  MedicinedetailsController({required double initialPrice}) {
+    price = initialPrice;
+    sum = price;
+  }
+
   inc() {
     number++;
     sum += price;

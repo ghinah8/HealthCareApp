@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
-import 'package:healthcare/routes.dart';
+import 'package:healthcare/view/cart/cart_cotroller/cart_controller.dart';
+import 'package:healthcare/view/medicine_details/medicinedetails_screen/medicinedetails_screen.dart';
 
 class Medicine extends StatelessWidget {
   const Medicine(
@@ -10,10 +11,11 @@ class Medicine extends StatelessWidget {
       required this.medicineprice,
       required this.medicineimage});
   final String medicinename;
-  final String medicineprice;
+  final double medicineprice;
   final String medicineimage;
   @override
   Widget build(BuildContext context) {
+    Get.put(CartController());
     return Container(
       height: 200,
       width: 130,
@@ -30,7 +32,12 @@ class Medicine extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                Get.toNamed(Routes.medicinedetailsScreen);
+                Get.to(() => MedicinedetailsScreen(
+                      name: medicinename,
+                      image: medicineimage,
+                      price: medicineprice,
+                      description: 'this part will resolve it later',
+                    ));
               },
               icon: Image.asset(
                 medicineimage,
@@ -55,19 +62,25 @@ class Medicine extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 80.0),
                   child: Container(
-                    width: 24,
+                    width: 28,
                     height: 32,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: Mycolor.lightblue),
-                    child: IconButton(
-                        padding: EdgeInsets.only(right: 15, bottom: 3, left: 0),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.add,
-                          color: Mycolor.white,
-                          size: 28,
-                        )),
+                    child: Center(
+                      child: IconButton(
+                          padding:
+                              EdgeInsets.only(right: 15, bottom: 3, left: 0),
+                          onPressed: () {
+                            Get.find<CartController>().addItem(
+                                medicinename, medicineimage, medicineprice, 1);
+                          },
+                          icon: Icon(
+                            Icons.add,
+                            color: Mycolor.white,
+                            size: 28,
+                          )),
+                    ),
                   ),
                 )
               ],

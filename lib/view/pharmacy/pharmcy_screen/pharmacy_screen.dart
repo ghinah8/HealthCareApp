@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/app_image.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
+import 'package:healthcare/routes.dart';
 import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/general_widget/button_custom.dart';
 import 'package:healthcare/widget/helpful_widget/custom_searchbar.dart';
@@ -17,7 +19,9 @@ class PharmacyScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: Mycolor.lightblue,
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(Routes.cartScreen);
+        },
         child: Icon(
           Icons.shopping_cart_outlined,
           color: Mycolor.white,
@@ -124,24 +128,24 @@ class PharmacyScreen extends StatelessWidget {
                   children: [
                     Medicine(
                         medicinename: 'Panadol',
-                        medicineprice: '15.99',
+                        medicineprice: 15.99,
                         medicineimage: AppImage.medicine1),
                     Medicine(
                         medicinename: 'Bodrex',
-                        medicineprice: '7.99',
+                        medicineprice: 7.5,
                         medicineimage: AppImage.medicine2),
                     Medicine(
                       medicinename: 'OBH Combi',
-                      medicineprice: '9.99',
+                      medicineprice: 99.9,
                       medicineimage: AppImage.medicine3,
                     ),
                     Medicine(
                         medicinename: 'Betadine',
-                        medicineprice: '6.99',
+                        medicineprice: 6.8,
                         medicineimage: AppImage.medicine4),
                     Medicine(
                         medicinename: 'Panadol',
-                        medicineprice: '15.99',
+                        medicineprice: 4.5,
                         medicineimage: AppImage.medicine1),
                   ],
                 ),

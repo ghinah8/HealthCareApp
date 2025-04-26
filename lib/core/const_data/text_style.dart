@@ -262,4 +262,40 @@ class FontStyles {
     fontWeight: FontWeight.w600,
     fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
   );
+  //cart screen
+  static final cartmidicinename = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final paymentdetail = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final taxes = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final totalprice = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final iagree = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final thankyou = GoogleFonts.rubik(
+    color: Mycolor.darkgrey,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 7, // الحجم النسبي
+  );
+  static final underthankyou = GoogleFonts.rubik(
+    color: Mycolor.blue,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
 }

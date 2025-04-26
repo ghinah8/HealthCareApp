@@ -20,6 +20,7 @@ class AppImage {
   static String medicine3 = '$imagesRoot/lablab.png';
   static String medicine4 = '$imagesRoot/pharmacyy.png';
   static String frame = '$imagesRoot/Frame.png';
+  static String card = "$imagesRoot/Frame 184.png";
 
   //icon
 

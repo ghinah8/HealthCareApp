@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 import 'package:healthcare/view/auth/sginin/sginin.dart';
 import 'package:healthcare/view/auth/sginup/sginup_screen.dart';
+import 'package:healthcare/view/card_info/cardinfo_screen/cardinfo_screen.dart';
+import 'package:healthcare/view/cart/cart_screen/cart_screen.dart';
 import 'package:healthcare/view/eligibility/eligilbility_screen/eligibility_screen.dart';
 import 'package:healthcare/view/home/homw_screen/home_screen.dart';
-import 'package:healthcare/view/medicine_details/medicinedetails_screen/medicinedetails_screen.dart';
 import 'package:healthcare/view/mysaved/mysaved_screen/mysaved_screen.dart';
 import 'package:healthcare/view/patientdetail/patientdetail_Screen/patient_details_screen.dart';
 import 'package:healthcare/view/pharmacy/pharmcy_screen/pharmacy_screen.dart';
@@ -27,6 +28,8 @@ class Routes {
   static const String eligilbilityScreen = '/eligilbilityscreen';
   static const String letstarted = '/letstarted';
   static const String medicinedetailsScreen = '/medicinedetails';
+  static const String cartScreen = '/cartscreen';
+  static const String cardinfoscreen = '/cardinfoscreen';
 
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
@@ -41,6 +44,7 @@ class Routes {
     GetPage(name: '/patientdetailScreen', page: () => PatientDetailsScreen()),
     GetPage(name: '/eligilbilityscreen', page: () => EligibilityScreen()),
     GetPage(name: '/letstarted', page: () => LetstartedScreen()),
-    GetPage(name: '/medicinedetails', page: () => MedicinedetailsScreen())
+    GetPage(name: '/cartscreen', page: () => CartScreen()),
+    GetPage(name: '/cardinfoscreen', page: () => CardinfoScreen()),
   ];
 }

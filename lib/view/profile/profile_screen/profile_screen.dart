@@ -76,10 +76,10 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
-                  Text(
-                    'Ghina',
-                    style: FontStyles.profilename,
-                  ),
+                  Obx(() => Text(
+                        controller.username.value,
+                        style: FontStyles.profilename,
+                      )),
                   SizedBox(
                     height: 20,
                   ),
