@@ -298,4 +298,14 @@ class FontStyles {
     fontWeight: FontWeight.w400,
     fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
   );
+  static final confirmyouraddress = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final address = GoogleFonts.poppins(
+    color: Mycolor.grey.withAlpha(100),
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
 }

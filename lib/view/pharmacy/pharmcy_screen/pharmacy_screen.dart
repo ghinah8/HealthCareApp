@@ -48,7 +48,9 @@ class PharmacyScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomSearchBar(),
+              CustomSearchBar(
+                backgroundcolor: Mycolor.grey.withOpacity(0.04),
+              ),
               SizedBox(
                 height: 20,
               ),

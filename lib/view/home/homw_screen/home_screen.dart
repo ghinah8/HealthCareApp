@@ -83,7 +83,9 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            CustomSearchBar(),
+            CustomSearchBar(
+              backgroundcolor: Mycolor.grey.withOpacity(0.04),
+            ),
             SizedBox(
               height: 15,
             ),

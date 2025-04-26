@@ -6,10 +6,11 @@ import '../../media_query_service.dart';
 
 class CustomSearchBar extends StatelessWidget {
   final Widget? netxPage; // خاصية اختيارية لقبول الدالة
-
+  final Color backgroundcolor;
   const CustomSearchBar({
     super.key,
     this.netxPage,
+    required this.backgroundcolor,
   });
 
   @override
@@ -32,7 +33,7 @@ class CustomSearchBar extends StatelessWidget {
           },
           decoration: InputDecoration(
             filled: true,
-            fillColor: Mycolor.grey.withOpacity(0.04),
+            fillColor: backgroundcolor,
             hintText: 'Search',
             hintStyle: FontStyles.searchbarText.copyWith(),
             prefixIcon: Padding(
