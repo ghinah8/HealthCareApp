@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:healthcare/view/Ambulance/Ambulance_Screen/Ambulance_Screen.dart';
+import 'package:healthcare/view/Appointment/Appointment_Screen/Appointment_Screen.dart';
 import 'package:healthcare/view/auth/sginin/sginin.dart';
 import 'package:healthcare/view/auth/sginup/sginup_screen.dart';
 import 'package:healthcare/view/card_info/cardinfo_screen/cardinfo_screen.dart';
@@ -32,6 +33,8 @@ class Routes {
   static const String cartScreen = '/cartscreen';
   static const String cardinfoscreen = '/cardinfoscreen';
   static const String ambulanceScreen = '/AmbulanceScreen';
+  static const String appointmentScreen = '/appointmentscreen';
+
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
     GetPage(name: '/sign_up_screen', page: () => SignupScreen()),
@@ -48,5 +51,6 @@ class Routes {
     GetPage(name: '/cartscreen', page: () => CartScreen()),
     GetPage(name: '/cardinfoscreen', page: () => CardinfoScreen()),
     GetPage(name: '/AmbulanceScreen', page: () => AmbulanceScreen()),
+    GetPage(name: '/appointmentscreen', page: () => AppointmentScreen()),
   ];
 }

@@ -124,9 +124,6 @@ class PharmacyScreen extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   crossAxisCount: 2,
                   shrinkWrap: true,
-                  physics:
-                      NeverScrollableScrollPhysics(), // Disable internal scrolling
-
                   children: [
                     Medicine(
                         medicinename: 'Panadol',

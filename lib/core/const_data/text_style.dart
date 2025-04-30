@@ -308,4 +308,24 @@ class FontStyles {
     fontWeight: FontWeight.w400,
     fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
   );
+  static final weekday = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final weekendday = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final availabletime = GoogleFonts.rubik(
+    color: Mycolor.darkgrey,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final time = GoogleFonts.rubik(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 3.5, // الحجم النسبي
+  );
 }

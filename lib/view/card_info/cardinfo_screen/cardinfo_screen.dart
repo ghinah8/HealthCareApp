@@ -36,119 +36,114 @@ class CardinfoScreen extends StatelessWidget {
         leading: Backbutton(),
         toolbarHeight: 100,
       ),
-      body: GetBuilder(
-          init: CardinfoController(),
-          builder: (controller) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18.0),
-              child: Column(
-                children: [
-                  Image.asset(AppImage.card),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  TextfieldCustom(
-                      hinttext: 'Card Name',
-                      scuretext: false,
-                      controller: cardname),
-                  TextfieldCustom(
-                      hinttext: 'Card Number',
-                      scuretext: false,
-                      controller: cardnumber),
-                  TextfieldCustom(
-                      hinttext: 'Expiry Date',
-                      scuretext: false,
-                      controller: expirydate),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: controller.checkboxstate.value,
-                        onChanged: controller.toggleCheckbox,
-                        activeColor: Mycolor.lightblue,
-                      ),
-                      Text(
-                        'I agree to the Terms and Conditions',
-                        style: FontStyles.iagree,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  ButtonCustom(
-                      textbutton: 'Buy',
-                      colorbutton: Mycolor.lightblue,
-                      hieght: 60,
-                      width: 300,
-                      textstyel: FontStyles.buy,
-                      onpressed: () {
-                        if (controller.checkboxstate.value == true) {
-                          Get.dialog(
-                            Center(
-                              child: Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                color: Mycolor.white,
-                                child: Container(
-                                  width: Get.width * 0.8, // 70% من عرض الشاشة
-                                  height:
-                                      Get.height * 0.5, // 30% من ارتفاع الشاشة
-                                  padding: EdgeInsets.all(20),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize
-                                        .min, // يخلي الكارد قد المحتوى لو حابة
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      CircleAvatar(
-                                        backgroundColor:
-                                            Mycolor.bublechatrecivecolor,
-                                        radius: 50,
-                                        child: Icon(
-                                          Icons.thumb_up,
-                                          color: Mycolor.lightblue,
-                                          size: 50,
+      body: SingleChildScrollView(
+        child: GetBuilder(
+            init: CardinfoController(),
+            builder: (controller) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Column(
+                  children: [
+                    Image.asset(AppImage.card),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    TextfieldCustom(
+                        hinttext: 'Card Number',
+                        scuretext: false,
+                        controller: cardnumber),
+                    Row(
+                      children: [
+                        Checkbox(
+                          value: controller.checkboxstate.value,
+                          onChanged: controller.toggleCheckbox,
+                          activeColor: Mycolor.lightblue,
+                        ),
+                        Text(
+                          'I agree to the Terms and Conditions',
+                          style: FontStyles.iagree,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 80,
+                    ),
+                    ButtonCustom(
+                        textbutton: 'Buy',
+                        colorbutton: Mycolor.lightblue,
+                        hieght: 60,
+                        width: 300,
+                        textstyel: FontStyles.buy,
+                        onpressed: () {
+                          if (controller.checkboxstate.value == true) {
+                            Get.dialog(
+                              Center(
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  color: Mycolor.white,
+                                  child: Container(
+                                    width: Get.width * 0.8, // 70% من عرض الشاشة
+                                    height: Get.height *
+                                        0.5, // 30% من ارتفاع الشاشة
+                                    padding: EdgeInsets.all(20),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize
+                                          .min, // يخلي الكارد قد المحتوى لو حابة
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        CircleAvatar(
+                                          backgroundColor:
+                                              Mycolor.bublechatrecivecolor,
+                                          radius: 50,
+                                          child: Icon(
+                                            Icons.thumb_up,
+                                            color: Mycolor.lightblue,
+                                            size: 50,
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(height: 20),
-                                      Text(
-                                        'Thank you!',
-                                        style: FontStyles.thankyou,
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text(
-                                        'You have agreed to the terms and completed your payment successfully',
-                                        textAlign: TextAlign.center,
-                                        style: FontStyles.underthankyou,
-                                      ),
-                                      SizedBox(height: 20),
-                                      ButtonCustom(
-                                          textbutton: 'Done',
-                                          colorbutton: Mycolor.lightblue,
-                                          hieght: 50,
-                                          width: 80,
-                                          textstyel: FontStyles.buy,
-                                          onpressed: () {
-                                            Get.back();
-                                          })
-                                    ],
+                                        SizedBox(height: 20),
+                                        Text(
+                                          'Thank you!',
+                                          style: FontStyles.thankyou,
+                                        ),
+                                        SizedBox(height: 10),
+                                        Text(
+                                          'You have agreed to the terms and completed your payment successfully',
+                                          textAlign: TextAlign.center,
+                                          style: FontStyles.underthankyou,
+                                        ),
+                                        SizedBox(height: 20),
+                                        ButtonCustom(
+                                            textbutton: 'Done',
+                                            colorbutton: Mycolor.lightblue,
+                                            hieght: 50,
+                                            width: 80,
+                                            textstyel: FontStyles.buy,
+                                            onpressed: () {
+                                              Get.back();
+                                            })
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            barrierDismissible:
-                                false, // اذا بدك المستخدم ما يقدر يسكر الديالوج بالضغط برا
-                          );
-                        } else {
-                          Get.snackbar('Cannot continue',
-                              'we cannot continue without your agreement ',
-                              snackPosition: SnackPosition.BOTTOM);
-                        }
-                      })
-                ],
-              ),
-            );
-          }),
+                              barrierDismissible:
+                                  false, // اذا بدك المستخدم ما يقدر يسكر الديالوج بالضغط برا
+                            );
+                          } else {
+                            Get.snackbar('Cannot continue',
+                                'we cannot continue without your agreement ',
+                                snackPosition: SnackPosition.BOTTOM);
+                          }
+                        })
+                  ],
+                ),
+              );
+            }),
+      ),
     );
   }
 }

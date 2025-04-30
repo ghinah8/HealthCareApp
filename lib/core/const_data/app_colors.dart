@@ -21,4 +21,5 @@ class Mycolor {
   static const skipcolor = Color(0xffA1A8B0);
   static const redcolor = Color.fromARGB(255, 255, 0, 0);
   static const themecolor = Color(0xFFB3E5FC);
+  static const backgroungcolor = Color(0xffF9F8F8);
 }

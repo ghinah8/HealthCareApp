@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                 Positioned(
                   right: 20,
                   top: 50,
-                  child: Image.asset(AppImage.doctor1), // ضع صورتك هنا
+                  child: Image.asset(AppImage.doctor1),
                 ),
               ],
             ),
@@ -112,7 +112,9 @@ class HomeScreen extends StatelessWidget {
                   Categories(
                       categoryname: 'Ambulance',
                       icon: AppImage.ambulance,
-                      onpressed: () {}),
+                      onpressed: () {
+                        Get.toNamed(Routes.ambulanceScreen);
+                      }),
                   SizedBox(
                     width: 18,
                   ),
