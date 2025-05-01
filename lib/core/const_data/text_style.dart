@@ -328,4 +328,29 @@ class FontStyles {
     fontWeight: FontWeight.w400,
     fontSize: SizeConfig.blockWidth * 3.5, // الحجم النسبي
   );
+  static final heartrate = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final heatpbm = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 8, // الحجم النسبي
+  );
+  static final latestreport = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final generalreport = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final date = GoogleFonts.poppins(
+    color: Mycolor.grey.withAlpha(102),
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 3, // الحجم النسبي
+  );
 }

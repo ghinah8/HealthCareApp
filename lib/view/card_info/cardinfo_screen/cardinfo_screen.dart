@@ -6,6 +6,7 @@ import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/app_image.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
+import 'package:healthcare/routes.dart';
 import 'package:healthcare/view/card_info/cardinfo_controller/cardinfo_controller.dart';
 import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/general_widget/button_custom.dart';
@@ -84,13 +85,11 @@ class CardinfoScreen extends StatelessWidget {
                                   ),
                                   color: Mycolor.white,
                                   child: Container(
-                                    width: Get.width * 0.8, // 70% من عرض الشاشة
-                                    height: Get.height *
-                                        0.5, // 30% من ارتفاع الشاشة
+                                    width: Get.width * 0.8,
+                                    height: Get.height * 0.5,
                                     padding: EdgeInsets.all(20),
                                     child: Column(
-                                      mainAxisSize: MainAxisSize
-                                          .min, // يخلي الكارد قد المحتوى لو حابة
+                                      mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -123,7 +122,7 @@ class CardinfoScreen extends StatelessWidget {
                                             width: 80,
                                             textstyel: FontStyles.buy,
                                             onpressed: () {
-                                              Get.back();
+                                              Get.toNamed(Routes.homescreen);
                                             })
                                       ],
                                     ),

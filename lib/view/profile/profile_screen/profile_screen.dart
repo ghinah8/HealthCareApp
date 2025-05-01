@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
           Get.toNamed(Routes.profilescreen);
         },
         onPressedReports: () {
-          Get.toNamed(Routes.mysaved);
+          Get.toNamed(Routes.reportesScreen);
         },
       ),
       backgroundColor: Mycolor.white,

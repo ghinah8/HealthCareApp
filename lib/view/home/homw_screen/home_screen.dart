@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
           Get.toNamed(Routes.profilescreen);
         },
         onPressedReports: () {
-          Get.toNamed(Routes.mysaved);
+          Get.toNamed(Routes.reportesScreen);
         },
       ),
       body: SingleChildScrollView(

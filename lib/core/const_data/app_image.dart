@@ -21,6 +21,11 @@ class AppImage {
   static String medicine4 = '$imagesRoot/pharmacyy.png';
   static String frame = '$imagesRoot/Frame.png';
   static String card = "$imagesRoot/Frame 184.png";
+  static String blooddrop =
+      '$imagesRoot/4753012_blood_drop_droplet_oil_water_icon 1.png';
+  static String heartbeat = '$imagesRoot/Vector12.png';
+  static String weightlifting =
+      '$imagesRoot/weight-lifting-up-svgrepo-com 1.png';
 
   //icon
 

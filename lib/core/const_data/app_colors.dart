@@ -22,4 +22,6 @@ class Mycolor {
   static const redcolor = Color.fromARGB(255, 255, 0, 0);
   static const themecolor = Color(0xFFB3E5FC);
   static const backgroungcolor = Color(0xffF9F8F8);
+  static const container1color = Color(0xffB2748C);
+  static const container2color = Color(0xffFBF0DC);
 }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
+import 'package:healthcare/routes.dart';
 import 'package:healthcare/view/Appointment/Appointment_controller/Appointment_controller.dart';
 import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/general_widget/button_custom.dart';
@@ -134,6 +135,7 @@ class AppointmentScreen extends StatelessWidget {
                               colorText: Mycolor.black,
                             );
                             controller.removetime(controller.selectedTime!);
+                            Get.toNamed(Routes.cardinfoscreen);
                           }),
               )
             ],
