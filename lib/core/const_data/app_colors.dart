@@ -24,4 +24,6 @@ class Mycolor {
   static const backgroungcolor = Color(0xffF9F8F8);
   static const container1color = Color(0xffB2748C);
   static const container2color = Color(0xffFBF0DC);
+  static const radiologyresult = Color(0xffBFC1BF);
+  static const check = Color.fromARGB(255, 50, 236, 50);
 }

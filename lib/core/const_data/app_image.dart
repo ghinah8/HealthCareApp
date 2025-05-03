@@ -26,6 +26,8 @@ class AppImage {
   static String heartbeat = '$imagesRoot/Vector12.png';
   static String weightlifting =
       '$imagesRoot/weight-lifting-up-svgrepo-com 1.png';
+  static String brain1 = '$imagesRoot/brain1.png';
+  static String brain2 = '$imagesRoot/brain2.png';
 
   //icon
 

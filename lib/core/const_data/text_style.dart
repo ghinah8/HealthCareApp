@@ -353,4 +353,24 @@ class FontStyles {
     fontWeight: FontWeight.w500,
     fontSize: SizeConfig.blockWidth * 3, // الحجم النسبي
   );
+  static final reportdate = GoogleFonts.poppins(
+    color: Mycolor.radiologyresult,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final mri = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w700,
+    fontSize: SizeConfig.blockWidth * 6, // الحجم النسبي
+  );
+  static final keyfinding = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final sgins = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4.5, // الحجم النسبي
+  );
 }
