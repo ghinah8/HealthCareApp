@@ -12,6 +12,7 @@ import 'package:healthcare/view/home/homw_screen/home_screen.dart';
 import 'package:healthcare/view/mysaved/mysaved_screen/mysaved_screen.dart';
 import 'package:healthcare/view/patientdetail/patientdetail_Screen/patient_details_screen.dart';
 import 'package:healthcare/view/pharmacy/pharmcy_screen/pharmacy_screen.dart';
+import 'package:healthcare/view/pharmacy/pharmcy_screen/seeallproduct.dart';
 import 'package:healthcare/view/profile/profile_screen/profile_screen.dart';
 import 'package:healthcare/view/splash_screen/letsstarted.dart';
 import 'package:healthcare/view/splash_screen/secondscreen.dart';
@@ -38,6 +39,7 @@ class Routes {
   static const String appointmentScreen = '/appointmentscreen';
   static const String reportesScreen = '/reportscreen';
   static const String radiologyresult = '/radiologyresult';
+  static const String seeallmedicine = '/seeallmedicine';
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
     GetPage(name: '/sign_up_screen', page: () => SignupScreen()),
@@ -57,5 +59,6 @@ class Routes {
     GetPage(name: '/appointmentscreen', page: () => AppointmentScreen()),
     GetPage(name: '/reportscreen', page: () => ReportScreen()),
     GetPage(name: '/radiologyresult', page: () => RadiologyScreen()),
+    GetPage(name: '/seeallmedicine', page: () => Seeallproduct())
   ];
 }

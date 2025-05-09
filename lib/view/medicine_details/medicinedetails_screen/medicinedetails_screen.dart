@@ -43,80 +43,88 @@ class MedicinedetailsScreen extends StatelessWidget {
       body: GetBuilder<MedicinedetailsController>(
         init: MedicinedetailsController(initialPrice: price),
         builder: (controller) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Image.network(
-                    AppLink.fixImageUrl(image),
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(name, style: FontStyles.medicinename2),
-                ),
-                SizedBox(height: 20),
-                Row(
+          return ListView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Column(
                   children: [
-                    IconButton(
-                        onPressed: controller.dec, icon: Icon(Icons.remove)),
-                    Text(controller.number.toString(),
-                        style: FontStyles.medicinumber),
-                    SizedBox(width: 15),
-                    Container(
-                      height: 40,
-                      width: 38,
-                      decoration: BoxDecoration(
-                          color: Mycolor.lightblue,
-                          borderRadius: BorderRadius.circular(5)),
-                      child: IconButton(
-                          onPressed: controller.inc,
-                          icon: Icon(Icons.add, color: Mycolor.white)),
+                    Align(
+                      alignment: Alignment.topCenter,
+                      child: Image.network(
+                        AppLink.fixImageUrl(image),
+                        fit: BoxFit.contain,
+                      ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 160.0),
-                      child: Text('\$${controller.sum.toStringAsFixed(1)}',
-                          style: FontStyles.price),
+                    SizedBox(height: 20),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(name, style: FontStyles.medicinename2),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        IconButton(
+                            onPressed: controller.dec,
+                            icon: Icon(Icons.remove)),
+                        Text(controller.number.toString(),
+                            style: FontStyles.medicinumber),
+                        SizedBox(width: 15),
+                        Container(
+                          height: 40,
+                          width: 38,
+                          decoration: BoxDecoration(
+                              color: Mycolor.lightblue,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: IconButton(
+                              onPressed: controller.inc,
+                              icon: Icon(Icons.add, color: Mycolor.white)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 160.0),
+                          child: Text('\$${controller.sum.toStringAsFixed(1)}',
+                              style: FontStyles.price),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Description', style: FontStyles.description),
+                    ),
+                    SizedBox(height: 20),
+                    Text(description, style: FontStyles.descriptiondetails),
+                    SizedBox(height: 40),
+                    ButtonCustom(
+                      textbutton: 'Add to Cart',
+                      colorbutton: Mycolor.lightblue,
+                      hieght: 60,
+                      width: 300,
+                      textstyel: FontStyles.buy,
+                      onpressed: () {
+                        final cartController = Get.find<CartController>();
+                        cartController.addItem(
+                          name,
+                          image,
+                          price,
+                          controller.number,
+                        );
+
+                        Get.snackbar(
+                          'Added to Cart',
+                          '$name x${controller.number} added!',
+                          backgroundColor: Colors.green.shade100,
+                          snackPosition: SnackPosition.BOTTOM,
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
                     )
                   ],
                 ),
-                SizedBox(height: 30),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('Description', style: FontStyles.description),
-                ),
-                SizedBox(height: 20),
-                Text(description, style: FontStyles.descriptiondetails),
-                SizedBox(height: 40),
-                ButtonCustom(
-                  textbutton: 'Buy',
-                  colorbutton: Mycolor.lightblue,
-                  hieght: 60,
-                  width: 300,
-                  textstyel: FontStyles.buy,
-                  onpressed: () {
-                    final cartController = Get.find<CartController>();
-                    cartController.addItem(
-                      name,
-                      image,
-                      price,
-                      controller.number,
-                    );
-
-                    Get.snackbar(
-                      'Added to Cart',
-                      '$name x${controller.number} added!',
-                      backgroundColor: Colors.green.shade100,
-                      snackPosition: SnackPosition.BOTTOM,
-                    );
-                  },
-                )
-              ],
-            ),
+              ),
+            ],
           );
         },
       ),

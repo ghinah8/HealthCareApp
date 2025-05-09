@@ -113,7 +113,9 @@ class PharmacyScreen extends StatelessWidget {
                           style: FontStyles.popularproduct,
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.toNamed(Routes.seeallmedicine);
+                            },
                             child: Text(
                               'See all',
                               style: FontStyles.seeall,
@@ -121,7 +123,7 @@ class PharmacyScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(
-                      height: 500,
+                      height: 600,
                       child: Obx(() {
                         if (controller.isLoading.value) {
                           return Center(child: CircularProgressIndicator());
@@ -131,7 +133,7 @@ class PharmacyScreen extends StatelessWidget {
                           physics:
                               NeverScrollableScrollPhysics(), // حتى ما يصطدم مع SingleChildScrollView
                           shrinkWrap: true,
-                          itemCount: controller.products.length,
+                          itemCount: 3,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
