@@ -5,6 +5,7 @@ import 'package:healthcare/core/const_data/app_image.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
 import 'package:healthcare/routes.dart';
+import 'package:healthcare/view/pharmacy/pharmacy_controller/pharmacy_controller.dart';
 import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/general_widget/button_custom.dart';
 import 'package:healthcare/widget/helpful_widget/custom_searchbar.dart';
@@ -43,116 +44,117 @@ class PharmacyScreen extends StatelessWidget {
         leading: Backbutton(),
         toolbarHeight: 100,
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              CustomSearchBar(
-                backgroundcolor: Mycolor.grey.withOpacity(0.04),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: double.infinity,
-                height: 180,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Mycolor.lightblue.withAlpha(30)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'Order quickly with',
-                            style: FontStyles.pharmacy,
-                          ),
-                          Text(
-                            'Prescription',
-                            style: FontStyles.pharmacy,
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          ButtonCustom(
-                              textbutton: 'Upload Prescription',
-                              colorbutton: Mycolor.lightblue,
-                              hieght: 40,
-                              width: 200,
-                              textstyel: FontStyles.pharmacyupload,
-                              onpressed: () {})
-                        ],
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Image.asset(AppImage.prescription)
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular Product',
-                    style: FontStyles.popularproduct,
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'See all',
-                        style: FontStyles.seeall,
-                      ))
-                ],
-              ),
-              SizedBox(
-                height: 500,
-                child: GridView.count(
-                  mainAxisSpacing: 15,
-                  crossAxisSpacing: 28,
-                  scrollDirection: Axis.vertical,
-                  crossAxisCount: 2,
-                  shrinkWrap: true,
+      body: GetBuilder(
+          init: PharmacyController(),
+          builder: (controller) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              child: SingleChildScrollView(
+                child: Column(
                   children: [
-                    Medicine(
-                        medicinename: 'Panadol',
-                        medicineprice: 15.99,
-                        medicineimage: AppImage.medicine1),
-                    Medicine(
-                        medicinename: 'Bodrex',
-                        medicineprice: 7.5,
-                        medicineimage: AppImage.medicine2),
-                    Medicine(
-                      medicinename: 'OBH Combi',
-                      medicineprice: 99.9,
-                      medicineimage: AppImage.medicine3,
+                    CustomSearchBar(
+                      backgroundcolor: Mycolor.grey.withOpacity(0.04),
                     ),
-                    Medicine(
-                        medicinename: 'Betadine',
-                        medicineprice: 6.8,
-                        medicineimage: AppImage.medicine4),
-                    Medicine(
-                        medicinename: 'Panadol',
-                        medicineprice: 4.5,
-                        medicineimage: AppImage.medicine1),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 180,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          color: Mycolor.lightblue.withAlpha(30)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text(
+                                  'Order quickly with',
+                                  style: FontStyles.pharmacy,
+                                ),
+                                Text(
+                                  'Prescription',
+                                  style: FontStyles.pharmacy,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                ButtonCustom(
+                                    textbutton: 'Upload Prescription',
+                                    colorbutton: Mycolor.lightblue,
+                                    hieght: 40,
+                                    width: 200,
+                                    textstyel: FontStyles.pharmacyupload,
+                                    onpressed: () {})
+                              ],
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Image.asset(AppImage.prescription)
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Popular Product',
+                          style: FontStyles.popularproduct,
+                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'See all',
+                              style: FontStyles.seeall,
+                            ))
+                      ],
+                    ),
+                    SizedBox(
+                      height: 500,
+                      child: Obx(() {
+                        if (controller.isLoading.value) {
+                          return Center(child: CircularProgressIndicator());
+                        }
+
+                        return GridView.builder(
+                          physics:
+                              NeverScrollableScrollPhysics(), // حتى ما يصطدم مع SingleChildScrollView
+                          shrinkWrap: true,
+                          itemCount: controller.products.length,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 15,
+                            crossAxisSpacing: 28,
+                          ),
+                          itemBuilder: (context, index) {
+                            final product = controller.products[index];
+                            return Medicine(
+                              medicinename: product.name,
+                              medicineprice: product.price,
+                              medicineimage: product.image,
+                              medicinedescription: product.description,
+                            );
+                          },
+                        );
+                      }),
+                    )
                   ],
                 ),
-              )
-            ],
-          ),
-        ),
-      ),
+              ),
+            );
+          }),
     );
   }
 }

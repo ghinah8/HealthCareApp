@@ -49,13 +49,21 @@ class ProfileScreen extends StatelessWidget {
                       CircleAvatar(
                         minRadius: 7,
                         maxRadius: 70,
-                        child: Image.asset(
-                          controller.image.value.path == ''
-                              ? AppImage.profilepicture
-                              : Image.file(controller.image.value).toString(),
-                          width: 150,
-                          height: 150,
-                          fit: BoxFit.cover,
+                        backgroundColor: Colors.transparent,
+                        child: ClipOval(
+                          child: controller.image.value.path == ''
+                              ? Image.asset(
+                                  AppImage.profilepicture,
+                                  width: 140,
+                                  height: 140,
+                                  fit: BoxFit.cover,
+                                )
+                              : Image.file(
+                                  controller.image.value,
+                                  width: 140,
+                                  height: 140,
+                                  fit: BoxFit.cover,
+                                ),
                         ),
                       ),
                       Positioned(

@@ -22,6 +22,7 @@ class ProfileController extends GetxController {
       if (imagepick == null) {
         return;
       }
+      update();
       final imagetemp = File(imagepick.path);
       image.value = imagetemp;
     } on PlatformException catch (e) {

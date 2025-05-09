@@ -5,6 +5,7 @@ import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/modle/registermodel.dart';
 import 'package:healthcare/modle/sgininodel.dart';
 import 'package:healthcare/routes.dart';
+import 'package:healthcare/service/link.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,8 +23,8 @@ class AuthController extends GetxController {
       String name, String email, String password, String phoneNumber) async {
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:8000/api/auth/register'),
-        headers: {'Content-Type': 'application/json'},
+        Uri.parse(AppLink.register),
+        headers: AppLink.getHeader(),
         body: json.encode({
           'username': name,
           'email': email,
@@ -55,9 +56,12 @@ class AuthController extends GetxController {
   Future<void> signIn(String email, String password) async {
     try {
       final response = await http.post(
-        Uri.parse('http://10.0.2.2:8000/api/auth/login'),
-        headers: {'Content-Type': 'application/json'},
-        body: json.encode({"email": email, "password": password}),
+        Uri.parse(AppLink.login),
+        headers: AppLink.getHeader(),
+        body: json.encode({
+          "email": email,
+          "password": password,
+        }),
       );
 
       if (response.statusCode == 200 || response.statusCode == 201) {

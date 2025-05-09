@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
+import 'package:healthcare/service/link.dart';
 
 class Prouductcart extends StatelessWidget {
   const Prouductcart(
@@ -37,10 +38,12 @@ class Prouductcart extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(medicineimage, width: 80, height: 80),
+              Image.network(
+                AppLink.fixImageUrl(medicineimage),
+                fit: BoxFit.contain,
+              ),
               const SizedBox(width: 10),
               Expanded(
-                // هذا مهم ليخلي الـ Column جوات Row يأخذ عرض مناسب
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

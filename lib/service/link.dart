@@ -1,32 +1,19 @@
-// class AppLink {
-//   // local address
-//   static String reg = "127.0.0.1";
+class AppLink {
+  static String appRoot = "http://10.0.2.2:8000";
 
-//   // remote address
-//   static String appRoot = "http://news.focal-x.com";
+  static String serverApiRoot = "$appRoot/api";
+  static String login = "$serverApiRoot/auth/login";
+  static String register = "$serverApiRoot/auth/register";
+  static String products = "$serverApiRoot/products";
 
-//   static String imageWithRoot = "$appRoot/storage/";
+  static Map<String, String> getHeader() {
+    Map<String, String> mainHeader = {'Content-Type': 'application/json'};
+    return mainHeader;
+  }
 
-//   static String imageWithoutRoot = "$appRoot/";
-
-//   static String serverApiRoot = "$appRoot/api";
-
-//   static String login = "$serverApiRoot/login";
-//   static String register = "$serverApiRoot/register";
-
-//   static String home = "$serverApiRoot/home";
-//   static String products = "$serverApiRoot/products";
-//   static String addcategories = "$serverApiRoot/add-categories";
-//   static String categories = "$serverApiRoot/categories";
-
-//   // Add logout endpoint
-//   static String logout = "$serverApiRoot/logout";
-
-//   Map<String, String> getHeader() {
-//     Map<String, String> mainHeader = {
-//       'Accept': 'application/json',
-//       'Content-Type': 'application/json',
-//     };
-//     return mainHeader;
-//   }
-// }
+  static String fixImageUrl(String path) {
+    if (path.startsWith('http')) return path;
+    if (!path.startsWith('/')) path = '/$path';
+    return '$appRoot$path';
+  }
+}

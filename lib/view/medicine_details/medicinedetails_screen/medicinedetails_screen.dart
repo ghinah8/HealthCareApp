@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
+import 'package:healthcare/service/link.dart';
 import 'package:healthcare/view/cart/cart_cotroller/cart_controller.dart';
 import 'package:healthcare/view/medicine_details/medicinedetails_controller/medicinedetails_controller.dart';
 import 'package:healthcare/widget/general_widget/back_button.dart';
@@ -48,7 +49,10 @@ class MedicinedetailsScreen extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.topCenter,
-                  child: Image.asset(image, scale: 0.4),
+                  child: Image.network(
+                    AppLink.fixImageUrl(image),
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 SizedBox(height: 20),
                 Align(

@@ -161,12 +161,16 @@ class ReportScreen extends StatelessWidget {
             Generalreport(
                 title: 'General report',
                 date: 'Jul 10,2023',
-                onpressed: () {},
+                onpressed: () {
+                  Get.toNamed(Routes.radiologyresult);
+                },
                 moreonpressed: () {}),
             Generalreport(
-                title: 'Blood Analaysis',
+                title: 'MRI Scan-Brain ',
                 date: 'May 1,2025',
-                onpressed: () {},
+                onpressed: () {
+                  Get.toNamed(Routes.radiologyresult);
+                },
                 moreonpressed: () {})
           ],
         ),
