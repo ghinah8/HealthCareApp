@@ -4,6 +4,7 @@ import 'package:healthcare/core/const_data/app_colors.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
 import 'package:healthcare/view/home/home_controller/home_controller.dart';
+import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/helpful_widget/article.dart';
 
 class MysavedScreen extends StatelessWidget {
@@ -18,13 +19,17 @@ class MysavedScreen extends StatelessWidget {
       backgroundColor: Mycolor.white,
       appBar: AppBar(
         backgroundColor: Mycolor.white,
-        title: Center(
-          child: Text(
-            'My Saved',
-            style: FontStyles.welcome,
+        title: Padding(
+          padding: const EdgeInsets.only(right: 40.0),
+          child: Center(
+            child: Text(
+              'My Saved',
+              style: FontStyles.welcome,
+            ),
           ),
         ),
-        leading: BackButton(),
+        centerTitle: true,
+        leading: Backbutton(),
         toolbarHeight: 80,
       ),
       body: Obx(() {
@@ -45,10 +50,10 @@ class MysavedScreen extends StatelessWidget {
               var savedArticle = homeController.savedArticles[index];
 
               return Article(
-                articleimage: savedArticle['image']!,
-                articalcontant: savedArticle['content']!,
-                articaldate: savedArticle['date']!,
-              );
+                  articleimage: savedArticle['image']!,
+                  articletitle: savedArticle['title']!,
+                  articaldate: savedArticle['date']!,
+                  articalcontant: savedArticle['content']!);
             },
           ),
         );

@@ -40,6 +40,8 @@ class Routes {
   static const String reportesScreen = '/reportscreen';
   static const String radiologyresult = '/radiologyresult';
   static const String seeallmedicine = '/seeallmedicine';
+  static const String articlscreen = '/articlescreen';
+
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
     GetPage(name: '/sign_up_screen', page: () => SignupScreen()),
@@ -59,6 +61,6 @@ class Routes {
     GetPage(name: '/appointmentscreen', page: () => AppointmentScreen()),
     GetPage(name: '/reportscreen', page: () => ReportScreen()),
     GetPage(name: '/radiologyresult', page: () => RadiologyScreen()),
-    GetPage(name: '/seeallmedicine', page: () => Seeallproduct())
+    GetPage(name: '/seeallmedicine', page: () => Seeallproduct()),
   ];
 }

@@ -22,11 +22,13 @@ class HomeController extends GetxController {
   }
 
   // Function to Save/Remove an Article
-  void toggleSaveArticle(String content, String image, String date) {
+  void toggleSaveArticle(
+      String content, String image, String date, String title) {
     var article = {
       'content': content,
       'image': image,
       'date': date,
+      'title': title,
     };
 
     // Check if article already exists
@@ -41,7 +43,7 @@ class HomeController extends GetxController {
   }
 
   // Check if an article is saved
-  bool isArticleSaved(String content) {
-    return savedArticles.any((a) => a['content'] == content);
+  bool isArticleSaved(String title) {
+    return savedArticles.any((a) => a['title'] == title);
   }
 }

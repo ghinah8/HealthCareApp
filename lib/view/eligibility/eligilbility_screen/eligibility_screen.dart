@@ -154,7 +154,7 @@ class EligibilityScreen extends StatelessWidget {
                               : Icons.radio_button_unchecked,
                           color: controller.completedSteps == 5
                               ? Mycolor.lightblue
-                              : Colors.grey,
+                              : Mycolor.lightgrey.withAlpha(100),
                           size: 55,
                         ),
                       ),
@@ -165,7 +165,9 @@ class EligibilityScreen extends StatelessWidget {
                       Center(
                         child: ButtonCustom(
                           textbutton: "Continue",
-                          colorbutton: Mycolor.lightblue,
+                          colorbutton: controller.completedSteps == 5
+                              ? Mycolor.lightblue
+                              : Mycolor.lightgrey.withAlpha(100),
                           hieght: 50,
                           width: 250,
                           textstyel: TextStyle(
@@ -173,7 +175,12 @@ class EligibilityScreen extends StatelessWidget {
                             fontSize: 24,
                           ),
                           onpressed: () {
-                            Get.toNamed(Routes.patientdetailScreen);
+                            if (controller.completedSteps == 5) {
+                              Get.toNamed(Routes.patientdetailScreen);
+                            } else {
+                              Get.snackbar('Please answer the questions',
+                                  'you cannot continue without your answer');
+                            }
                           },
                         ),
                       ),

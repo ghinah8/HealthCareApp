@@ -48,7 +48,7 @@ class AgeDropdownField extends StatelessWidget {
               items: items.map((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
-                  child: Text(value, style: FontStyles.year),
+                  child: Text(value, style: FontStyles.categoriess),
                 );
               }).toList(),
               onChanged: (newValue) {

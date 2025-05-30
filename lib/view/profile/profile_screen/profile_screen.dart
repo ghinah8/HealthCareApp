@@ -6,6 +6,7 @@ import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
 import 'package:healthcare/routes.dart';
 import 'package:healthcare/view/profile/profile_controller/profile_controller.dart';
+import 'package:healthcare/widget/general_widget/back_button.dart';
 import 'package:healthcare/widget/general_widget/navbar.dart';
 import 'package:healthcare/widget/helpful_widget/profiledetails.dart';
 import 'package:healthcare/widget/helpful_widget/unsedwidget.dart';
@@ -36,6 +37,7 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: Mycolor.white,
       appBar: AppBar(
         backgroundColor: Mycolor.white,
+        leading: Backbutton(),
       ),
       body: GetBuilder(
           init: ProfileController(),
@@ -147,7 +149,9 @@ class ProfileScreen extends StatelessWidget {
                   Profiledetails(
                     iconimage: AppImage.document,
                     text: 'Appointmnet',
-                    goto: () {},
+                    goto: () {
+                      Get.toNamed(Routes.appointmentScreen);
+                    },
                     padding: 116,
                   ),
                   SizedBox(

@@ -7,6 +7,7 @@ import 'package:healthcare/core/const_data/app_image.dart';
 import 'package:healthcare/core/const_data/text_style.dart';
 import 'package:healthcare/media_query_service.dart';
 import 'package:healthcare/routes.dart';
+import 'package:healthcare/view/Article/articleontroller/article_controller.dart';
 import 'package:healthcare/view/home/home_controller/home_controller.dart';
 import 'package:healthcare/widget/general_widget/navbar.dart';
 import 'package:healthcare/widget/helpful_widget/article.dart';
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     final homeController = Get.put(HomeController());
+    final articalcontroller = Get.put(ArticleController());
 
     return Scaffold(
       backgroundColor: Mycolor.white,
@@ -90,38 +92,26 @@ class HomeScreen extends StatelessWidget {
               height: 15,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 35),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Categories(
                       categoryname: 'Doctors',
                       icon: AppImage.topdoctor,
                       onpressed: () {}),
-                  SizedBox(
-                    width: 18,
-                  ),
                   Categories(
                       categoryname: 'Pharmacy',
                       icon: AppImage.pharmacy,
                       onpressed: () {
                         Get.toNamed(Routes.pharmacyScreen);
                       }),
-                  SizedBox(
-                    width: 18,
-                  ),
                   Categories(
                       categoryname: 'Ambulance',
                       icon: AppImage.ambulance,
                       onpressed: () {
                         Get.toNamed(Routes.ambulanceScreen);
                       }),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  Categories(
-                      categoryname: 'Rays',
-                      icon: AppImage.rays,
-                      onpressed: () {})
                 ],
               ),
             ),
@@ -150,24 +140,17 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Article(
-              articleimage: AppImage.artical1,
-              articalcontant: '''The 25 Healthiest Fruits You
-Can Eat''',
-              articaldate: 'Jun 10, 2023 ',
-            ),
-            Article(
-              articleimage: AppImage.artical2,
-              articalcontant: '''The Impact of COVID-19 on
- Healthcare''',
-              articaldate: 'Jul 10, 2023',
-            ),
-            Article(
-              articleimage: AppImage.artical4,
-              articalcontant: '''Peptide Therapy: The Future
- of Medicine?''',
-              articaldate: 'Jul 12, 2023',
-            ),
+            Obx(() {
+              return Column(
+                children: articalcontroller.articles.map((article) {
+                  return Article(
+                      articleimage: article.image,
+                      articalcontant: article.content,
+                      articaldate: article.date,
+                      articletitle: article.title);
+                }).toList(),
+              );
+            })
           ],
         ),
       ),
