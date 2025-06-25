@@ -176,7 +176,7 @@ class EligibilityScreen extends StatelessWidget {
                           ),
                           onpressed: () {
                             if (controller.completedSteps == 5) {
-                              Get.toNamed(Routes.patientdetailScreen);
+                              Get.offAllNamed(Routes.patientdetailScreen);
                             } else {
                               Get.snackbar('Please answer the questions',
                                   'you cannot continue without your answer');

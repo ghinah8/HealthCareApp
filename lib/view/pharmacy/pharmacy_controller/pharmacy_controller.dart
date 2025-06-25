@@ -22,7 +22,7 @@ class PharmacyController extends GetxController {
         headers: AppLink.getHeader(),
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         final data = jsonDecode(response.body);
         final model = Productmoudel.fromJson(data);
         products.value = model.products;

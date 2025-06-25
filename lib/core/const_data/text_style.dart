@@ -373,4 +373,24 @@ class FontStyles {
     fontWeight: FontWeight.w400,
     fontSize: SizeConfig.blockWidth * 4.5, // الحجم النسبي
   );
+  static final findyour = GoogleFonts.rubik(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 8, // الحجم النسبي
+  );
+  static final findyourdoctor = GoogleFonts.rubik(
+    color: Mycolor.lightgrey.withAlpha(60),
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 8, // الحجم النسبي
+  );
+  static final categories = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final doctor = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 6, // الحجم النسبي
+  );
 }

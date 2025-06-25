@@ -40,7 +40,7 @@ class AuthController extends GetxController {
 
         Get.snackbar('Success', registerData.message,
             duration: Duration(seconds: 6), colorText: Mycolor.black);
-        Get.toNamed(Routes.eligilbilityScreen);
+        Get.offAllNamed(Routes.eligilbilityScreen);
       } else {
         final jsonData = jsonDecode(response.body);
         final errorMessage = jsonData["message"];
@@ -79,7 +79,7 @@ class AuthController extends GetxController {
 
         Get.snackbar('Success', signInData.message,
             duration: Duration(seconds: 6), colorText: Mycolor.black);
-        Get.toNamed(Routes.homescreen);
+        Get.offAllNamed(Routes.homescreen);
       } else {
         final jsonData = jsonDecode(response.body);
         final errorMessage = jsonData["message"];

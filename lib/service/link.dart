@@ -5,9 +5,13 @@ class AppLink {
   static String login = "$serverApiRoot/auth/login";
   static String register = "$serverApiRoot/auth/register";
   static String products = "$serverApiRoot/products";
-
+  static String specifics = "$serverApiRoot/specifics";
   static Map<String, String> getHeader() {
-    Map<String, String> mainHeader = {'Content-Type': 'application/json'};
+    Map<String, String> mainHeader = {
+      'Content-Type': 'application/json',
+      'Authorization':
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTU2NGU1MDYxZDNjMDY2YzFmZTAzZiIsInJvbGUiOiJkb2N0b3IiLCJ1c2VybmFtZSI6Im1vZ2hhcmVlYiIsImNyZWF0ZWRBdCI6IjIwMjUtMDYtMjBUMTM6NDA6NTQuMjIzWiIsImlhdCI6MTc1MDQzMDExMn0.33Y6vbu3nV-t544YOpPxWRHlQqpwLmT-FKqINYX2pnQ"
+    };
     return mainHeader;
   }
 

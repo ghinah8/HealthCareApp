@@ -170,7 +170,7 @@ class PatientDetailsScreen extends StatelessWidget {
                           onpressed: patientController.currentStep.value ==
                                   patientController.totalSteps
                               ? () {
-                                  Get.toNamed(Routes.homescreen);
+                                  Get.offAllNamed(Routes.homescreen);
                                 }
                               : null,
                         ),

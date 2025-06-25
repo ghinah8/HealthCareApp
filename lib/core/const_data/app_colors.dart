@@ -11,7 +11,6 @@ class Mycolor {
   static const grey = Color(0xff221F1F);
   static const lightblue = Color(0xff407CE2);
   static const solightblue = Color(0xffB3E5FC);
-
   static const lightgrey = Color(0xff565656);
   static const messagetextcolor = Color(0xff383737);
   static const bublechatrecivecolor = Color(0xffe4e4e4);

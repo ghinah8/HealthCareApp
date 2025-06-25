@@ -23,14 +23,12 @@ class PatientController extends GetxController {
     int count = 0;
     if (patient.value.name != null && patient.value.name!.isNotEmpty) count++;
     if (patient.value.age != null && patient.value.age!.isNotEmpty) count++;
-    if (patient.value.gender != null && patient.value.gender!.isNotEmpty)
+    if (patient.value.gender != null && patient.value.gender!.isNotEmpty) {
       count++;
+    }
 
     currentStep.value = count;
     update();
-    print('Current name: ${patient.value.name}');
-    print('Current age: ${patient.value.age}');
-    print('Current gender: ${patient.value.gender}');
   }
 
   // تهيئة القيم الافتراضية عند البداية

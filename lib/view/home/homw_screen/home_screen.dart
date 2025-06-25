@@ -99,7 +99,9 @@ class HomeScreen extends StatelessWidget {
                   Categories(
                       categoryname: 'Doctors',
                       icon: AppImage.topdoctor,
-                      onpressed: () {}),
+                      onpressed: () {
+                        Get.toNamed(Routes.finddoctorScreen);
+                      }),
                   Categories(
                       categoryname: 'Pharmacy',
                       icon: AppImage.pharmacy,
