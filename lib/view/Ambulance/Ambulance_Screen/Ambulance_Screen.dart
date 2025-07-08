@@ -128,7 +128,26 @@ class AmbulanceScreen extends StatelessWidget {
                                   hieght: 60,
                                   width: 250,
                                   textstyel: FontStyles.buy,
-                                  onpressed: () {})
+                                  onpressed: () {
+                                    Get.dialog(
+                                      Dialog(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          child: Padding(
+                                            padding: EdgeInsets.all(20),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text(
+                                                  'Are you sure you want to request an ambulance car?',
+                                                  style: FontStyles.areyousure,
+                                                )
+                                              ],
+                                            ),
+                                          )),
+                                    );
+                                  })
                             ],
                           ),
                         ),

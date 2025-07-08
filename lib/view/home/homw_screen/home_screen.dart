@@ -22,8 +22,21 @@ class HomeScreen extends StatelessWidget {
     SizeConfig().init(context);
     final homeController = Get.put(HomeController());
     final articalcontroller = Get.put(ArticleController());
-
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Click here for help',
+        shape: CircleBorder(),
+        onPressed: () {
+          Get.toNamed(Routes.chatScreen);
+        },
+        backgroundColor: Mycolor.lightblue,
+        child: Image.asset(
+          AppImage.aichat,
+          width: 30,
+          height: 30,
+          scale: 0.5,
+        ),
+      ),
       backgroundColor: Mycolor.white,
       bottomNavigationBar: BottomNavBar(
         isSelectedHome: true,

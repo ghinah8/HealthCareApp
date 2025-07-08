@@ -28,6 +28,7 @@ class AppImage {
       '$imagesRoot/weight-lifting-up-svgrepo-com 1.png';
   static String brain1 = '$imagesRoot/brain1.png';
   static String brain2 = '$imagesRoot/brain2.png';
+  static String ai = '$imagesRoot/Vector (4).png';
 
   //icon
 
@@ -48,4 +49,5 @@ class AppImage {
   static String document = "$iconRoot/Document.png";
   static String heartprofile = "$iconRoot/Heart.png";
   static String rays = "$iconRoot/raysicon.png";
+  static String aichat = "$imagesRoot/Group.png";
 }

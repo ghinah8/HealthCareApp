@@ -5,7 +5,7 @@ class HomeController extends GetxController {
   var savedArticles =
       <Map<String, String>>[].obs; // List of maps instead of just text
   var username = ''.obs; // حفظ اسم المستخدم ليظهر في الواجهة
-
+  int selectedHelpOption = 0;
   @override
   void onInit() {
     super.onInit();
@@ -30,10 +30,8 @@ class HomeController extends GetxController {
       'date': date,
       'title': title,
     };
-
     // Check if article already exists
     bool exists = savedArticles.any((a) => a['content'] == content);
-
     if (exists) {
       savedArticles.removeWhere((a) => a['content'] == content); // Remove it
     } else {
@@ -45,5 +43,11 @@ class HomeController extends GetxController {
   // Check if an article is saved
   bool isArticleSaved(String title) {
     return savedArticles.any((a) => a['title'] == title);
+  }
+
+  // ✅ تحديث قيمة الخيار المحدد
+  void selectHelpOption(int value) {
+    selectedHelpOption = value;
+    update();
   }
 }

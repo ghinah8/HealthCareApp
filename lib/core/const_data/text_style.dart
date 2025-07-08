@@ -393,4 +393,45 @@ class FontStyles {
     fontWeight: FontWeight.w600,
     fontSize: SizeConfig.blockWidth * 6, // الحجم النسبي
   );
+  static final tohelpyou = GoogleFonts.rozhaOne(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 7, // الحجم النسبي
+  );
+
+  static final better = GoogleFonts.rozhaOne(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 7, // الحجم النسبي
+  );
+  static final leteknow = GoogleFonts.rozhaOne(
+    color: Mycolor.grey.withAlpha(100),
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final areyoueperiening = GoogleFonts.rubik(
+    color: Mycolor.grey.withAlpha(180),
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final done = GoogleFonts.rubik(
+    color: Mycolor.white,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final mymessage = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final drai = GoogleFonts.oswald(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w700,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final areyousure = GoogleFonts.rozhaOne(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w700,
+    fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
 }

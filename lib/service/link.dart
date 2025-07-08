@@ -6,6 +6,7 @@ class AppLink {
   static String register = "$serverApiRoot/auth/register";
   static String products = "$serverApiRoot/products";
   static String specifics = "$serverApiRoot/specifics";
+  static String treatment = "$serverApiRoot/treatment";
   static Map<String, String> getHeader() {
     Map<String, String> mainHeader = {
       'Content-Type': 'application/json',

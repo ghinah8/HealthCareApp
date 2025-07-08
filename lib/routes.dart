@@ -7,6 +7,7 @@ import 'package:healthcare/view/auth/sginin/sginin.dart';
 import 'package:healthcare/view/auth/sginup/sginup_screen.dart';
 import 'package:healthcare/view/card_info/cardinfo_screen/cardinfo_screen.dart';
 import 'package:healthcare/view/cart/cart_screen/cart_screen.dart';
+import 'package:healthcare/view/chat/chat_screen/chat_screen.dart';
 import 'package:healthcare/view/eligibility/eligilbility_screen/eligibility_screen.dart';
 import 'package:healthcare/view/finddoctor/finddoctor_screen/find_doctor_screen.dart';
 import 'package:healthcare/view/home/homw_screen/home_screen.dart';
@@ -45,7 +46,7 @@ class Routes {
   static const String articlscreen = '/articlescreen';
   static const String topdoctorScreen = '/topdoctorscreen';
   static const String finddoctorScreen = '/finddoctorscreen';
-
+  static const String chatScreen = '/chatscreen';
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
     GetPage(name: '/sign_up_screen', page: () => SignupScreen()),
@@ -67,6 +68,7 @@ class Routes {
     GetPage(name: '/radiologyresult', page: () => RadiologyScreen()),
     GetPage(name: '/seeallmedicine', page: () => Seeallproduct()),
     GetPage(name: '/topdoctorscreen', page: () => TopDoctorsView()),
-    GetPage(name: '/finddoctorscreen', page: () => FindDoctorScreen())
+    GetPage(name: '/finddoctorscreen', page: () => FindDoctorScreen()),
+    GetPage(name: '/chatscreen', page: () => ChatScreen())
   ];
 }
