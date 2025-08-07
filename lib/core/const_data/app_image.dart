@@ -29,7 +29,10 @@ class AppImage {
   static String brain1 = '$imagesRoot/brain1.png';
   static String brain2 = '$imagesRoot/brain2.png';
   static String ai = '$imagesRoot/Vector (4).png';
-
+  static String notifications = '$imagesRoot/notification.png';
+  static String mapp = '$imagesRoot/photo_2025-07-25_01-34-28.jpg';
+  static String whatsapp = '$imagesRoot/photo_2025-07-25_01-34-30.jpg';
+  static String doctorimage = '$imagesRoot/Dr. Nallarasi.png';
   //icon
 
   static const String iconRoot = "assets/icon";

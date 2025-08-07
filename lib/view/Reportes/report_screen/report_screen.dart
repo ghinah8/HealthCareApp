@@ -30,6 +30,9 @@ class ReportScreen extends StatelessWidget {
         onPressedReports: () {
           Get.toNamed(Routes.reportesScreen);
         },
+        onPressedNotifications: () {
+          Get.toNamed(Routes.notificationsScreen);
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),

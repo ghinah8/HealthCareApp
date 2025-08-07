@@ -429,9 +429,74 @@ class FontStyles {
     fontWeight: FontWeight.w700,
     fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
   );
-  static final areyousure = GoogleFonts.rozhaOne(
+  static final areyousure = GoogleFonts.poppins(
     color: Mycolor.grey,
     fontWeight: FontWeight.w700,
     fontSize: SizeConfig.blockWidth * 5, // الحجم النسبي
+  );
+  static final emergency = GoogleFonts.rozhaOne(
+    color: Mycolor.grey.withAlpha(153),
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 3.5, // الحجم النسبي
+  );
+  static final information = GoogleFonts.poppins(
+    color: Mycolor.grey,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final yes = GoogleFonts.poppins(
+    color: Mycolor.white,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final no = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final notifications = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w600,
+    fontSize: SizeConfig.blockWidth * 6, // الحجم النسبي
+  );
+  static final notificationstitle = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 4.5, // الحجم النسبي
+  );
+  static final notificationscontain = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w200,
+    fontSize: SizeConfig.blockWidth * 3, // الحجم النسبي
+  );
+  static final allappointment = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 3.3, // الحجم النسبي
+  );
+  static final allappointment2 = GoogleFonts.poppins(
+    color: Mycolor.white,
+    fontWeight: FontWeight.w400,
+    fontSize: SizeConfig.blockWidth * 3.3, // الحجم النسبي
+  );
+  static final drolivia = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 4, // الحجم النسبي
+  );
+  static final cardiology = GoogleFonts.poppins(
+    color: Mycolor.black,
+    fontWeight: FontWeight.w300,
+    fontSize: SizeConfig.blockWidth * 3, // الحجم النسبي
+  );
+  static final rebook = GoogleFonts.poppins(
+    color: Mycolor.lightblue,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 3.8, // الحجم النسبي
+  );
+  static final addreview = GoogleFonts.poppins(
+    color: Mycolor.white,
+    fontWeight: FontWeight.w500,
+    fontSize: SizeConfig.blockWidth * 3.8, // الحجم النسبي
   );
 }

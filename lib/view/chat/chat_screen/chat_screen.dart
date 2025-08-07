@@ -16,7 +16,9 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: Mycolor.white,
       appBar: AppBar(
+        backgroundColor: Mycolor.white,
         toolbarHeight: 100,
         leading: Backbutton(),
         title: Row(

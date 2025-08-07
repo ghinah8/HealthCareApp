@@ -131,6 +131,7 @@ class AmbulanceScreen extends StatelessWidget {
                                   onpressed: () {
                                     Get.dialog(
                                       Dialog(
+                                          backgroundColor: Mycolor.white,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(20)),
@@ -142,6 +143,69 @@ class AmbulanceScreen extends StatelessWidget {
                                                 Text(
                                                   'Are you sure you want to request an ambulance car?',
                                                   style: FontStyles.areyousure,
+                                                ),
+                                                Text(
+                                                  'Emergency services will be notified immediately after confirmation.',
+                                                  style: FontStyles.emergency,
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                information(
+                                                  text: 'Location',
+                                                  info: 'NYC street 34',
+                                                  icon: Icons.location_on,
+                                                  iconcolor: Mycolor.redcolor
+                                                      .withAlpha(130),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                information(
+                                                  text: 'Phone number',
+                                                  info: '0987124537',
+                                                  icon: Icons.phone,
+                                                  iconcolor: Mycolor.check
+                                                      .withAlpha(130),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                information(
+                                                  text:
+                                                      'Estimated time of arrival',
+                                                  info: '3 in',
+                                                  icon: Icons.alarm,
+                                                  iconcolor: Mycolor.black,
+                                                ),
+                                                SizedBox(
+                                                  height: 30,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    ButtonCustom(
+                                                        textbutton: 'yes',
+                                                        colorbutton:
+                                                            Mycolor.lightblue,
+                                                        hieght: 40,
+                                                        width: 80,
+                                                        textstyel:
+                                                            FontStyles.yes,
+                                                        onpressed: () {}),
+                                                    ButtonCustom(
+                                                        textbutton: 'NO',
+                                                        colorbutton: Mycolor
+                                                            .grey
+                                                            .withAlpha(30),
+                                                        hieght: 40,
+                                                        width: 80,
+                                                        textstyel:
+                                                            FontStyles.no,
+                                                        onpressed: () {})
+                                                  ],
                                                 )
                                               ],
                                             ),
@@ -157,5 +221,36 @@ class AmbulanceScreen extends StatelessWidget {
                 ],
               );
             }));
+  }
+}
+
+class information extends StatelessWidget {
+  information(
+      {required this.text,
+      required this.info,
+      required this.iconcolor,
+      required this.icon});
+  final String text;
+  final String info;
+  final Color iconcolor;
+  final IconData icon;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          color: iconcolor,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text('$text : ', style: FontStyles.information),
+        Text(
+          info,
+          style: FontStyles.information,
+        )
+      ],
+    );
   }
 }

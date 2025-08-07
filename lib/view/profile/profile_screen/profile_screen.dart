@@ -33,6 +33,9 @@ class ProfileScreen extends StatelessWidget {
         onPressedReports: () {
           Get.toNamed(Routes.reportesScreen);
         },
+        onPressedNotifications: () {
+          Get.toNamed(Routes.notificationsScreen);
+        },
       ),
       backgroundColor: Mycolor.white,
       appBar: AppBar(
@@ -150,7 +153,7 @@ class ProfileScreen extends StatelessWidget {
                     iconimage: AppImage.document,
                     text: 'Appointmnet',
                     goto: () {
-                      Get.toNamed(Routes.appointmentScreen);
+                      Get.toNamed(Routes.allappointment);
                     },
                     padding: 116,
                   ),

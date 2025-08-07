@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:healthcare/view/Ambulance/Ambulance_Screen/Ambulance_Screen.dart';
 import 'package:healthcare/view/Appointment/Appointment_Screen/Appointment_Screen.dart';
+import 'package:healthcare/view/Doctor-details/doctordetail_Screen/doctor_details_view.dart';
 import 'package:healthcare/view/RadiologyResult/radiology_screen/radiology_screen.dart';
 import 'package:healthcare/view/Reportes/report_screen/report_screen.dart';
+import 'package:healthcare/view/allappointment/allappointment_screen/allappointment_screen.dart';
 import 'package:healthcare/view/auth/sginin/sginin.dart';
 import 'package:healthcare/view/auth/sginup/sginup_screen.dart';
 import 'package:healthcare/view/card_info/cardinfo_screen/cardinfo_screen.dart';
@@ -12,6 +14,7 @@ import 'package:healthcare/view/eligibility/eligilbility_screen/eligibility_scre
 import 'package:healthcare/view/finddoctor/finddoctor_screen/find_doctor_screen.dart';
 import 'package:healthcare/view/home/homw_screen/home_screen.dart';
 import 'package:healthcare/view/mysaved/mysaved_screen/mysaved_screen.dart';
+import 'package:healthcare/view/notifications/notifications_screen/notification_Screen.dart';
 import 'package:healthcare/view/patientdetail/patientdetail_Screen/patient_details_screen.dart';
 import 'package:healthcare/view/pharmacy/pharmcy_screen/pharmacy_screen.dart';
 import 'package:healthcare/view/pharmacy/pharmcy_screen/seeallproduct.dart';
@@ -47,6 +50,9 @@ class Routes {
   static const String topdoctorScreen = '/topdoctorscreen';
   static const String finddoctorScreen = '/finddoctorscreen';
   static const String chatScreen = '/chatscreen';
+  static const String notificationsScreen = '/notifications';
+  static const String allappointment = '/allappointment';
+  static const String doctorDetailesScreen = '/doctordetails';
   static final List<GetPage> pages = [
     GetPage(name: '/home_screen', page: () => HomeScreen()),
     GetPage(name: '/sign_up_screen', page: () => SignupScreen()),
@@ -69,6 +75,9 @@ class Routes {
     GetPage(name: '/seeallmedicine', page: () => Seeallproduct()),
     GetPage(name: '/topdoctorscreen', page: () => TopDoctorsView()),
     GetPage(name: '/finddoctorscreen', page: () => FindDoctorScreen()),
-    GetPage(name: '/chatscreen', page: () => ChatScreen())
+    GetPage(name: '/chatscreen', page: () => ChatScreen()),
+    GetPage(name: '/notifications', page: () => NotificationView()),
+    GetPage(name: '/allappointment', page: () => AllappointmentScreen()),
+    GetPage(name: '/doctordetails', page: () => DoctorDetailsView())
   ];
 }

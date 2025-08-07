@@ -52,6 +52,9 @@ class HomeScreen extends StatelessWidget {
         onPressedReports: () {
           Get.toNamed(Routes.reportesScreen);
         },
+        onPressedNotifications: () {
+          Get.toNamed(Routes.notificationsScreen);
+        },
       ),
       body: SingleChildScrollView(
         child: Column(
