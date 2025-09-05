@@ -19,6 +19,13 @@ class AppointmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
+    // استقبال arguments بشكل آمن
+    final args = Get.arguments;
+    final String? id =
+        args is Map<String, dynamic> ? args["id"]?.toString() : null;
+    final String? address =
+        args is Map<String, dynamic> ? args["address"]?.toString() : null;
+
     return Scaffold(
       backgroundColor: Mycolor.white,
       appBar: AppBar(
@@ -80,9 +87,7 @@ class AppointmentScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -92,51 +97,59 @@ class AppointmentScreen extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: controller.selectedDayTimes.length,
-                    itemBuilder: (context, index) {
-                      final time = controller.selectedDayTimes[index];
-                      return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                          child: Availabletime(
-                            time: time,
-                            isSelected: time == controller.selectedTime,
-                            onTap: () => controller.selectTime(time),
-                          ));
-                    }),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: controller.selectedDayTimes.length,
+                  itemBuilder: (context, index) {
+                    final time = controller.selectedDayTimes[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Availabletime(
+                        time: time,
+                        isSelected: time == controller.selectedTime,
+                        onTap: () => controller.selectTime(time),
+                      ),
+                    );
+                  },
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 80.0),
                 child: ButtonCustom(
-                    textbutton: 'Book Appointment',
-                    colorbutton: Mycolor.lightblue,
-                    hieght: 60,
-                    width: double.infinity,
-                    textstyel: FontStyles.buy,
-                    onpressed: controller.selectedTime == null
-                        ? null
-                        : () {
-                            final selectedDate =
-                                controller.selectedDay ?? controller.focusedDay;
+                  textbutton: 'Book Appointment',
+                  colorbutton: Mycolor.lightblue,
+                  hieght: 60,
+                  width: double.infinity,
+                  textstyel: FontStyles.buy,
+                  onpressed: controller.selectedTime == null
+                      ? null
+                      : () {
+                          final selectedDate =
+                              controller.selectedDay ?? controller.focusedDay;
 
-                            // استخراج اليوم والشهر والسنة
-                            final day =
-                                selectedDate.day.toString().padLeft(2, '0');
-                            final month =
-                                selectedDate.month.toString().padLeft(2, '0');
-                            final year = selectedDate.year;
+                          final day =
+                              selectedDate.day.toString().padLeft(2, '0');
+                          final month =
+                              selectedDate.month.toString().padLeft(2, '0');
+                          final year = selectedDate.year;
 
-                            final formattedDate = '$year-$month-$day';
+                          final formattedDate = '$year-$month-$day';
 
-                            Get.snackbar(
-                              'Booking Appointment At',
-                              '${controller.selectedTime} on $formattedDate',
-                              backgroundColor: Mycolor.bublechatrecivecolor,
-                              colorText: Mycolor.black,
-                            );
-                            controller.removetime(controller.selectedTime!);
-                            Get.toNamed(Routes.cardinfoscreen);
-                          }),
+                          Get.snackbar(
+                            'Booking Appointment At',
+                            '${controller.selectedTime} on $formattedDate',
+                            backgroundColor: Mycolor.bublechatrecivecolor,
+                            colorText: Mycolor.black,
+                          );
+
+                          // استخدم id و address بأمان
+                          controller.bookAndSendAppointment(
+                            id ?? "",
+                            address ?? "",
+                          );
+
+                          Get.toNamed(Routes.cardinfoscreen);
+                        },
+                ),
               )
             ],
           ),

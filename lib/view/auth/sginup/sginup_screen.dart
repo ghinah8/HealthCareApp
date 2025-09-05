@@ -132,7 +132,6 @@ class SignupScreen extends StatelessWidget {
                           AuthController authController = Get.find();
                           authController.signUp(
                               name, email, password, phonenumber);
-                          Get.toNamed(Routes.eligilbilityScreen);
                         }
                         final userService = Get.find<UserService>();
                         await userService.saveUsername(nameController.text,

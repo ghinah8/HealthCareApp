@@ -1,14 +1,26 @@
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'dart:convert';
+import 'package:get/get.dart';
+import 'package:healthcare/modle/createMeicineOrder.dart';
+import 'package:healthcare/service/link.dart';
+import 'package:http/http.dart' as http;
 
 class CartController extends GetxController {
+  RxBool isLoading = false.obs;
   List<CartItem> cartItems = [];
-  void addItem(String name, String image, double price, int quantity) {
+
+  void addItem(
+      String id, String name, String image, double price, int quantity) {
     int index = cartItems.indexWhere((item) => item.name == name);
     if (index != -1) {
       cartItems[index].quantity += quantity;
     } else {
-      cartItems.add(
-          CartItem(name: name, image: image, price: price, quantity: quantity));
+      cartItems.add(CartItem(
+        id: id,
+        name: name,
+        image: image,
+        price: price,
+        quantity: quantity,
+      ));
     }
     update();
   }
@@ -35,6 +47,32 @@ class CartController extends GetxController {
   }
 
   double get totalSum => cartItems.fold(0, (sum, item) => sum + item.total);
+
+  Future<void> createMedicineOrder(CreateMedicineOrder order) async {
+    try {
+      isLoading.value = true;
+      final response = await http.post(
+        Uri.parse(AppLink.createOrder),
+        headers: {
+          "Content-Type": "application/json",
+          ...AppLink.getHeader(),
+        },
+        body: jsonEncode(order.toJson()),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        Get.snackbar("Success",
+            "your order is on progress,it will arrive soon in your address : ${order.address}");
+      } else {
+        Get.snackbar("Error", "Failed: ${response.statusCode} ");
+        print(response.body);
+      }
+    } catch (e) {
+      Get.snackbar("Exception", e.toString());
+    } finally {
+      isLoading.value = false;
+    }
+  }
 }
 
 class CartItem {
@@ -42,8 +80,10 @@ class CartItem {
   final String image;
   final double price;
   int quantity;
+  final String id;
 
   CartItem({
+    required this.id,
     required this.name,
     required this.image,
     required this.price,

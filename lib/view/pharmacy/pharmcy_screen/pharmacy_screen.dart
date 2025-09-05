@@ -133,7 +133,7 @@ class PharmacyScreen extends StatelessWidget {
                           physics:
                               NeverScrollableScrollPhysics(), // حتى ما يصطدم مع SingleChildScrollView
                           shrinkWrap: true,
-                          itemCount: 3,
+                          itemCount: 5,
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
@@ -147,6 +147,8 @@ class PharmacyScreen extends StatelessWidget {
                               medicineprice: product.price,
                               medicineimage: product.image,
                               medicinedescription: product.description,
+                              medicinecapacity: product.capacity,
+                              medicineid: product.id,
                             );
                           },
                         );

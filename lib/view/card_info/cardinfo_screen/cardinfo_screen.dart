@@ -70,7 +70,7 @@ class CardinfoScreen extends StatelessWidget {
                       height: 80,
                     ),
                     ButtonCustom(
-                        textbutton: 'Buy',
+                        textbutton: 'Pay',
                         colorbutton: Mycolor.lightblue,
                         hieght: 60,
                         width: 300,

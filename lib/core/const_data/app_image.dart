@@ -32,7 +32,8 @@ class AppImage {
   static String notifications = '$imagesRoot/notification.png';
   static String mapp = '$imagesRoot/photo_2025-07-25_01-34-28.jpg';
   static String whatsapp = '$imagesRoot/photo_2025-07-25_01-34-30.jpg';
-  static String doctorimage = '$imagesRoot/Dr. Nallarasi.png';
+  static String doctorimage = '$imagesRoot/Dr. lona.pgn.png';
+  static String cadiology = "$imagesRoot/cardiology.png.png";
   //icon
 
   static const String iconRoot = "assets/icon";

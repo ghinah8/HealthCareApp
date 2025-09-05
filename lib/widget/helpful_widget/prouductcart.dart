@@ -12,7 +12,8 @@ class Prouductcart extends StatelessWidget {
       required this.number,
       required this.delete,
       required this.medicineimage,
-      required this.medicinename});
+      required this.medicinename,
+      required this.medicineId});
   final VoidCallback decrement;
   final VoidCallback increment;
   final VoidCallback delete;
@@ -20,6 +21,7 @@ class Prouductcart extends StatelessWidget {
   final String number;
   final String medicineimage;
   final String medicinename;
+  final String medicineId;
 
   @override
   Widget build(BuildContext context) {

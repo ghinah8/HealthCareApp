@@ -1,16 +1,17 @@
 // widget/category_item.dart
 import 'package:flutter/material.dart';
 import 'package:healthcare/core/const_data/app_colors.dart';
+import 'package:healthcare/service/link.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
-  final String imagePath;
+  final String image;
   final VoidCallback ontap;
 
   const CategoryItem(
       {super.key,
       required this.title,
-      required this.imagePath,
+      required this.image,
       required this.ontap});
 
   @override
@@ -27,9 +28,25 @@ class CategoryItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(imagePath, height: 50),
+            // Image.asset(image),
+            Image.network(
+              AppLink.fixImageUrl(image),
+              height: 35,
+              fit: BoxFit.fitHeight,
+            ),
             const SizedBox(height: 5),
-            Text(title, style: const TextStyle(color: Colors.white)),
+            Container(
+              height: 40, // ارتفاع ثابت للنص
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                title,
+                style: const TextStyle(color: Colors.white),
+                maxLines: 2, // عدد الأسطر المسموح بها
+                overflow:
+                    TextOverflow.ellipsis, // إضافة ثلاث نقاط عند تجاوز النص
+                textAlign: TextAlign.center,
+              ),
+            ),
           ],
         ),
       ),

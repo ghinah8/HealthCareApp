@@ -66,6 +66,8 @@ class Seeallproduct extends StatelessWidget {
                   medicineprice: product.price,
                   medicineimage: product.image,
                   medicinedescription: product.description,
+                  medicinecapacity: product.capacity,
+                  medicineid: product.id,
                 );
               },
             );

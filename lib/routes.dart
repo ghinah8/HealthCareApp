@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:healthcare/view/Ambulance/Ambulance_Screen/Ambulance_Screen.dart';
 import 'package:healthcare/view/Appointment/Appointment_Screen/Appointment_Screen.dart';
-import 'package:healthcare/view/Doctor-details/doctordetail_Screen/doctor_details_view.dart';
+// import 'package:healthcare/view/Doctor-details/doctordetail_Screen/doctor_details_view.dart';
 import 'package:healthcare/view/RadiologyResult/radiology_screen/radiology_screen.dart';
 import 'package:healthcare/view/Reportes/report_screen/report_screen.dart';
 import 'package:healthcare/view/allappointment/allappointment_screen/allappointment_screen.dart';
@@ -78,6 +78,5 @@ class Routes {
     GetPage(name: '/chatscreen', page: () => ChatScreen()),
     GetPage(name: '/notifications', page: () => NotificationView()),
     GetPage(name: '/allappointment', page: () => AllappointmentScreen()),
-    GetPage(name: '/doctordetails', page: () => DoctorDetailsView())
   ];
 }

@@ -1,28 +1,30 @@
 import 'dart:convert';
 
-SpecialtiesModel specialtiesModelFromJson(String str) =>
-    SpecialtiesModel.fromJson(json.decode(str));
+// To parse this JSON data, do
+// final specifics = specificsFromJson(jsonString);
 
-String specialtiesModelToJson(SpecialtiesModel data) =>
-    json.encode(data.toJson());
+Specifics specificsFromJson(String str) => Specifics.fromJson(json.decode(str));
 
-class SpecialtiesModel {
-  final List<Specialty> specifics;
+String specificsToJson(Specifics data) => json.encode(data.toJson());
+
+class Specifics {
+  final List<Specific> specifics;
   final int totalCount;
   final int documentCount;
 
-  SpecialtiesModel({
+  Specifics({
     required this.specifics,
     required this.totalCount,
     required this.documentCount,
   });
 
-  factory SpecialtiesModel.fromJson(Map<String, dynamic> json) =>
-      SpecialtiesModel(
-        specifics: List<Specialty>.from(
-            json["specifics"].map((x) => Specialty.fromJson(x))),
-        totalCount: json["totalCount"],
-        documentCount: json["documentCount"],
+  factory Specifics.fromJson(Map<String, dynamic> json) => Specifics(
+        specifics: json["specifics"] != null
+            ? List<Specific>.from(
+                json["specifics"].map((x) => Specific.fromJson(x)))
+            : [],
+        totalCount: json["totalCount"] ?? 0,
+        documentCount: json["documentCount"] ?? 0,
       );
 
   Map<String, dynamic> toJson() => {
@@ -32,42 +34,50 @@ class SpecialtiesModel {
       };
 }
 
-class Specialty {
+class Specific {
   final String id;
   final String name;
   final bool isAvailable;
-  final DateTime createdAt;
-  final DateTime updatedAt;
+  final String? image;
+  final DateTime? createdAt;
+  final DateTime? updatedAt;
   final int v;
-  final String specialtyId;
+  final String? specificId;
 
-  Specialty({
+  Specific({
     required this.id,
     required this.name,
     required this.isAvailable,
-    required this.createdAt,
-    required this.updatedAt,
+    this.image,
+    this.createdAt,
+    this.updatedAt,
     required this.v,
-    required this.specialtyId,
+    this.specificId,
   });
 
-  factory Specialty.fromJson(Map<String, dynamic> json) => Specialty(
-        id: json["_id"],
-        name: json["name"],
-        isAvailable: json["isAvailable"],
-        createdAt: DateTime.parse(json["createdAt"]),
-        updatedAt: DateTime.parse(json["updatedAt"]),
-        v: json["__v"],
-        specialtyId: json["id"],
+  factory Specific.fromJson(Map<String, dynamic> json) => Specific(
+        id: json["_id"] ?? '',
+        name: json["name"] ?? '',
+        isAvailable: json["isAvailable"] ?? false,
+        image: json["image"] ?? '',
+        createdAt: json["createdAt"] != null
+            ? DateTime.tryParse(json["createdAt"])
+            : null,
+        updatedAt: json["updatedAt"] != null
+            ? DateTime.tryParse(json["updatedAt"])
+            : null,
+        v: json["__v"] ?? 0,
+        specificId: json["id"] ?? '',
       );
 
   Map<String, dynamic> toJson() => {
         "_id": id,
         "name": name,
         "isAvailable": isAvailable,
-        "createdAt": createdAt.toIso8601String(),
-        "updatedAt": updatedAt.toIso8601String(),
+        "image": image,
+        "createdAt": createdAt?.toIso8601String(),
+        "updatedAt": updatedAt?.toIso8601String(),
         "__v": v,
-        "id": specialtyId,
+        "id": specificId,
       };
 }

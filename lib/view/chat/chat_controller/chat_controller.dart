@@ -35,7 +35,7 @@ class ChatController extends GetxController {
         final data = jsonDecode(response.body);
         final reply = data['treatment'];
 
-        // احذف "..." البابل المؤقتة
+        //  "..."
         messages.removeWhere((m) => m['isTyping'] == true);
 
         messages.add({'text': reply, 'isSender': false});

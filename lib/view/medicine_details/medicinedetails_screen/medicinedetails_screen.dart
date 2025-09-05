@@ -14,13 +14,16 @@ class MedicinedetailsScreen extends StatelessWidget {
   final String image;
   final String description;
   final double price;
-
+  final String capacity;
+  final String id;
   const MedicinedetailsScreen({
     super.key,
     required this.name,
     required this.image,
     required this.description,
     required this.price,
+    required this.capacity,
+    required this.id,
   });
 
   @override
@@ -87,6 +90,12 @@ class MedicinedetailsScreen extends StatelessWidget {
                         )
                       ],
                     ),
+                    SizedBox(height: 20),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Capacity: $capacity',
+                          style: FontStyles.description),
+                    ),
                     SizedBox(height: 30),
                     Align(
                       alignment: Alignment.centerLeft,
@@ -104,6 +113,7 @@ class MedicinedetailsScreen extends StatelessWidget {
                       onpressed: () {
                         final cartController = Get.find<CartController>();
                         cartController.addItem(
+                          id,
                           name,
                           image,
                           price,

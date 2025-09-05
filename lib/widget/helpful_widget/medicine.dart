@@ -13,12 +13,16 @@ class Medicine extends StatelessWidget {
     required this.medicineprice,
     required this.medicineimage,
     required this.medicinedescription,
+    required this.medicinecapacity,
+    required this.medicineid,
   });
 
   final String medicinename;
   final double medicineprice;
   final String medicineimage;
   final String medicinedescription;
+  final String medicinecapacity;
+  final String medicineid;
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +48,8 @@ class Medicine extends StatelessWidget {
                       image: medicineimage,
                       price: medicineprice,
                       description: medicinedescription,
+                      capacity: medicinecapacity,
+                      id: medicineid,
                     ));
               },
               child: SizedBox(
@@ -82,7 +88,12 @@ class Medicine extends StatelessWidget {
                     padding: EdgeInsets.zero,
                     onPressed: () {
                       Get.find<CartController>().addItem(
-                          medicinename, medicineimage, medicineprice, 1);
+                        medicineid,
+                        medicinename,
+                        medicineimage,
+                        medicineprice,
+                        1,
+                      );
                     },
                     icon: Icon(
                       Icons.add,
